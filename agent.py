@@ -28,8 +28,8 @@ def get_usb_devices():
         return []
 
 def send_data(data):
-    url = "http://127.0.0.0:5432/api/logs"    
-    requests.post(url, data=json.dumps(data), headers=headers)
+    url = "http://127.0.0.1:8000/collect-data"    
+    requests.post(url, data=json.dumps(data))
 
 
 if __name__ == "__main__":
