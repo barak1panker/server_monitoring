@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI,  File, HTTPException
 from fastapi.responses import JSONResponse
 from datetime import datetime
 import os
