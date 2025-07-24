@@ -35,4 +35,4 @@ def send_data(data):
 if __name__ == "__main__":
     data = collect_data()
     print(data)
-    send_data(data)    
+    send_data(data)     
