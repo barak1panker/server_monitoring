@@ -1,0 +1,5 @@
+psutil
+requests
+wmi ; sys_platform == 'win32'
+fastapi
+uvicorn
