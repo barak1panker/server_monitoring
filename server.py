@@ -56,7 +56,7 @@ async def collect_data(request: Request):
             user='postgres',
             password='',  # אם יש סיסמה - הכנס כאן
             host='localhost',
-            port='5432'
+            port='5433'
         )
         cur = conn.cursor()
         cur.execute("""

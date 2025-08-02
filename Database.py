@@ -3,9 +3,9 @@ import psycopg2
 conn = psycopg2.connect(
     dbname='monitor-info',
     user='postgres',
-    password='',
+    password='19979797h',
     host='localhost',
-    port='5432'
+    port='5433'
 )
 
 cur = conn.cursor()
