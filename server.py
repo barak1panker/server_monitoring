@@ -1,13 +1,9 @@
-from fastapi import FastAPI,  File, HTTPException
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import JSONResponse
 from datetime import datetime
 import os
-from typing import List
-from fastapi import Request
 import json
 import psycopg2
-
-
 
 app = FastAPI(
     title="Server Monitoring API",
@@ -15,16 +11,19 @@ app = FastAPI(
     version="1.0.0"
 )
 
-IP = "172.0.0.1"
-port = 8000
 UPLOAD_DIR = "logs"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-@app.post(
-    "/collect-data",
-    summary="Collect server data",
-    description="Collects data about the server's processes, connections, and USB devices."
-)
+# PostgreSQL connection details
+DB_CONFIG = {
+    "dbname": "monitor-info",
+    "user": "postgres",
+    "password": "19979797g",
+    "host": "localhost",
+    "port": "5433"
+}
+
+@app.post("/collect-data", summary="Collect server data")
 async def collect_data(request: Request):
     try:
         data = await request.json()
@@ -34,46 +33,44 @@ async def collect_data(request: Request):
     if not isinstance(data, dict):
         raise HTTPException(status_code=400, detail="Expected a JSON object.")
 
-    required_keys = ["hostname", "platform", "processes", "connections", "usb_devices", "mac_address"]
+    required_keys = ["hostname", "platform", "processes", "connections", "usb_devices", "mac_address", "json_path"]
     missing = [key for key in required_keys if key not in data]
     if missing:
         raise HTTPException(status_code=400, detail=f"Missing keys: {missing}")
 
-    filename = f"{data['hostname']}_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.json"
-    filepath = os.path.join(UPLOAD_DIR, filename)
-
-    with open(filepath, "w", encoding="utf-8") as f:
-        print(data)
-        json.dump(data, f, indent=4)
-
-    print(f"Data collected from {data['hostname']} at {datetime.now()}")
-
-    # ✅ שלב חדש: שמירה למסד הנתונים
+    # Optional: save a backup copy of the JSON data to local logs
     try:
-        import psycopg2
-        conn = psycopg2.connect(
-            dbname='monitor-info',
-            user='postgres',
-            password='',  # אם יש סיסמה - הכנס כאן
-            host='localhost',
-            port='5433'
-        )
+        local_filename = f"{data['hostname']}_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.json"
+        local_path = os.path.join(UPLOAD_DIR, local_filename)
+        with open(local_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4)
+    except Exception as e:
+        print("Warning: Failed to save local backup JSON:", e)
+
+    # Save the metadata to PostgreSQL
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
         cur = conn.cursor()
+
         cur.execute("""
-            INSERT INTO devices (device_name, mac_address, json_path)
-            VALUES (%s, %s, %s);
+            INSERT INTO devices (device_name, description, mac_address, json_path)
+            VALUES (%s, %s, %s, %s);
         """, (
             data["hostname"],
+            "Collected from agent",
             data["mac_address"],
-            filepath
+            data["json_path"]
         ))
+
         conn.commit()
         cur.close()
         conn.close()
+
     except Exception as e:
-        print(f"Database error: {e}")
+        print("❌ Database error:", e)
+        raise HTTPException(status_code=500, detail="Database error")
 
     return JSONResponse(content={
-        "message": "Data collected successfully",
+        "message": "Data collected and saved successfully",
         "timestamp": datetime.now().isoformat()
     })
