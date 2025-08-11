@@ -28,9 +28,10 @@ def collect_data():
 
 # Saves collected data to a local JSON file and returns the file path
 def save_json(data):
-    os.makedirs("logs", exist_ok=True)  # Make sure the logs directory exists
+    upload_dir =  r"C:\Logs"  # Use your existing folder
+    os.makedirs(upload_dir, exist_ok=True)  # Ensure the folder exists
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = f"logs/{data['hostname']}_{timestamp}.json"
+    filename = os.path.join(upload_dir, f"{data['hostname']}_{timestamp}.json")
     with open(filename, 'w') as f:
         json.dump(data, f, indent=4)
     return filename

@@ -11,14 +11,14 @@ app = FastAPI(
     version="1.0.0"
 )
 
-UPLOAD_DIR = "logs"
+UPLOAD_DIR = r"C:\Logs"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # PostgreSQL connection details
 DB_CONFIG = {
     "dbname": "monitor-info",
     "user": "postgres",
-    "password": "19979797g",
+    "password": "19979797h",
     "host": "localhost",
     "port": "5433"
 }
