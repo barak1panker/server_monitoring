@@ -33,7 +33,7 @@ async def collect_data(request: Request):
     if not isinstance(data, dict):
         raise HTTPException(status_code=400, detail="Expected a JSON object.")
 
-    required_keys = ["hostname", "platform", "processes", "connections", "usb_devices", "mac_address", "json_path"]
+    required_keys = ["hostname", "platform", "processes", "connections", "usb_devices", "mac_address", "json_path", "file_hashes"]
     missing = [key for key in required_keys if key not in data]
     if missing:
         raise HTTPException(status_code=400, detail=f"Missing keys: {missing}")
@@ -47,20 +47,36 @@ async def collect_data(request: Request):
     except Exception as e:
         print("Warning: Failed to save local backup JSON:", e)
 
-    # Save the metadata to PostgreSQL
     try:
         conn = psycopg2.connect(**DB_CONFIG)
         cur = conn.cursor()
 
+        # 1️⃣ הכנס או עדכן את המכשיר בטבלת devices
         cur.execute("""
             INSERT INTO devices (device_name, description, mac_address, json_path)
-            VALUES (%s, %s, %s, %s);
-        """, (
-            data["hostname"],
-            "Collected from agent",
-            data["mac_address"],
-            data["json_path"]
-        ))
+            VALUES (%s, %s, %s, %s)
+            RETURNING id;
+        """, (data["hostname"], "Collected from agent", data["mac_address"], data["json_path"]))
+        device_id = cur.fetchone()[0]
+
+        # 2️⃣ הכנס את כל ה‑file_hashes בטבלת file_hashes
+        file_hashes = data["file_hashes"]  # ציפייה לרשימה של dict עם {"path": ..., "hash": ...}
+        for f in file_hashes:
+            cur.execute("""
+                INSERT INTO file_hashes (device_id, file_path, file_hash)
+                VALUES (%s, %s, %s)
+                ON CONFLICT DO NOTHING;
+            """, (device_id, f["path"], f["hash"]))
+
+        # 3️⃣ השוואת hash מול malicious_hashes ויצירת alerts
+        cur.execute("""
+            INSERT INTO alerts (device_id, file_hash)
+            SELECT f.device_id, f.file_hash
+            FROM file_hashes f
+            JOIN malicious_hashes m ON LOWER(f.file_hash) = m.file_hash
+            WHERE f.device_id = %s
+            ON CONFLICT DO NOTHING;
+        """, (device_id,))
 
         conn.commit()
         cur.close()
@@ -72,5 +88,6 @@ async def collect_data(request: Request):
 
     return JSONResponse(content={
         "message": "Data collected and saved successfully",
+        "device_id": device_id,
         "timestamp": datetime.now().isoformat()
     })

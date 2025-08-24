@@ -22,14 +22,14 @@ def collect_data():
         "processes": [p.info for p in psutil.process_iter(['pid', 'name'])],
         "connections": [conn._asdict() for conn in psutil.net_connections()],
         "usb_devices": get_usb_devices(),
-        "file_hashes": get_file_hashes()
+        "file_hashes": get_file_hashes()  # 🚀 כולל את רשימת ה‑hashes
     }
     return data
 
 # Saves collected data to a local JSON file and returns the file path
 def save_json(data):
-    upload_dir =  r"C:\Logs"  # Use your existing folder
-    os.makedirs(upload_dir, exist_ok=True)  # Ensure the folder exists
+    upload_dir = r"C:\Logs"
+    os.makedirs(upload_dir, exist_ok=True)
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename = os.path.join(upload_dir, f"{data['hostname']}_{timestamp}.json")
     with open(filename, 'w') as f:
