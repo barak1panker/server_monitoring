@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Server Monitoring Dashboard</title>
+  <style>
+    :root{
+      --bg:#0f1216;--panel:#151a21;--muted:#8a93a1;--text:#e7ecf3;--accent:#4aa8ff;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444;--chip:#232a34;
+      --ring:0 0 0 1px rgba(255,255,255,.06), 0 10px 20px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#0e1115,#0b0e12);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial}
+    a{color:inherit;text-decoration:none}
+
+    .container{max-width:1200px;margin:0 auto;padding:20px}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .title{font-size:clamp(20px,3vw,28px);font-weight:700;letter-spacing:.2px}
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .input,select,button{background:var(--panel);border:1px solid #212734;color:var(--text);border-radius:10px;padding:10px 12px}
+    .input::placeholder{color:var(--muted)}
+    .pill{background:var(--chip);padding:8px 10px;border-radius:999px;color:var(--muted);font-size:13px;display:inline-flex;gap:8px;align-items:center;border:1px solid #273041}
+    .badge{border-radius:999px;padding:4px 10px;font-size:12px}
+    .badge.ok{background:rgba(34,197,94,.12);color:var(--ok);border:1px solid rgba(34,197,94,.35)}
+    .badge.warn{background:rgba(245,158,11,.12);color:var(--warn);border:1px solid rgba(245,158,11,.35)}
+    .badge.bad{background:rgba(239,68,68,.12);color:var(--bad);border:1px solid rgba(239,68,68,.35)}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .card{grid-column:span 3;background:var(--panel);border-radius:var(--radius);padding:16px;box-shadow:var(--ring);min-width:0}
+    .card.wide{grid-column:span 12}
+    .metric{display:flex;align-items:center;justify-content:space-between}
+    .metric .label{color:var(--muted);font-size:12px}
+    .metric .value{font-size:28px;font-weight:700}
+    .spark{height:36px;width:100%;margin-top:10px}
+
+    .table{width:100%;border-collapse:separate;border-spacing:0 10px}
+    .thead th{color:var(--muted);font-weight:600;font-size:12px;text-align:left;padding:0 10px}
+    .row{background:var(--panel);box-shadow:var(--ring)}
+    .row td{padding:12px 10px}
+    .server{display:flex;gap:10px;align-items:center}
+    .dot{width:10px;height:10px;border-radius:50%}
+    .dot.up{background:var(--ok);}
+    .dot.down{background:var(--bad)}
+
+    .progress{height:8px;background:#1b2230;border-radius:999px;overflow:hidden;border:1px solid #222a38}
+    .bar{height:100%}
+    .bar.cpu{background:linear-gradient(90deg,#2dd4bf,#4aa8ff)}
+    .bar.ram{background:linear-gradient(90deg,#f59e0b,#f97316)}
+    .bar.disk{background:linear-gradient(90deg,#ef4444,#f43f5e)}
+
+    .footer{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;margin-top:12px}
+
+    .demo{display:none}
+    .demo.show{display:inline-flex}
+
+    .loading{display:none;align-items:center;gap:8px;color:var(--muted);font-size:14px}
+    .loading.show{display:flex}
+    .spinner{width:14px;height:14px;border:2px solid #2a3547;border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .testbox{position:fixed;left:12px;bottom:12px;background:#0b0f14;border:1px solid #273041;border-radius:12px;padding:10px 12px;color:#c6d0e0;font-size:12px;box-shadow:var(--ring);max-width:46ch;z-index:9999}
+    .testbox .ok{color:var(--ok)}
+    .testbox .bad{color:var(--bad)}
+
+    /* Alerts drawer */
+    .drawer{position:fixed;inset:0;pointer-events:none;z-index:9998}
+    .drawer .panel{
+      position:absolute;right:0;top:0;bottom:0;width:420px;max-width:92vw;background:var(--panel);
+      border-left:1px solid #273041;box-shadow:var(--ring);transform:translateX(100%);transition:transform .25s ease;
+      display:flex;flex-direction:column
+    }
+    .drawer .backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);opacity:0;transition:opacity .25s ease}
+    .drawer.show{pointer-events:auto}
+    .drawer.show .panel{transform:translateX(0)}
+    .drawer.show .backdrop{opacity:1}
+    .drawer .head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #273041}
+    .drawer .list{padding:8px 12px;overflow:auto}
+    .alert-item{border:1px solid #273041;border-radius:12px;padding:10px;margin:8px 0;background:#131923}
+    .alert-item .meta{color:var(--muted);font-size:12px;margin-top:4px}
+    .alert-item .sev{font-weight:700}
+    .btn-alerts{position:relative}
+    .btn-alerts .dot{position:absolute;top:-6px;right:-6px;width:10px;height:10px;background:var(--bad);border:2px solid #0e1115;border-radius:999px;display:none}
+    .btn-alerts.has-new .dot{display:block}
+
+    @media (max-width: 900px){
+      .card{grid-column:span 6}
+    }
+    @media (max-width: 640px){
+      header{flex-direction:column;align-items:stretch}
+      .card{grid-column:span 12}
+      .toolbar{justify-content:space-between}
+      .thead{display:none}
+      .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+      .row td{padding:8px 10px}
+    }
+  </style>
+</head>
+<body>
+  <noscript style="color:#fff;background:#d00;padding:8px 12px;display:block;text-align:center">This page requires JavaScript.</noscript>
+  <div class="container">
+    <header>
+      <div class="title">Server Monitoring</div>
+      <div class="toolbar">
+        <input id="search" class="input" placeholder="Search by server / IP" />
+        <select id="statusFilter" title="Filter by status">
+          <option value="all">All</option>
+          <option value="up">Up</option>
+          <option value="down">Down</option>
+        </select>
+        <button id="refreshBtn">Refresh</button>
+        <button id="alertsBtn" class="btn-alerts">Alerts <span id="alertsCount" class="badge bad" style="display:none">0</span><span class="dot"></span></button>
+        <span id="demoBadge" class="pill demo">Demo mode</span>
+        <span id="loading" class="loading"><span class="spinner"></span>Loading…</span>
+      </div>
+    </header>
+
+    <section class="grid" id="metrics">
+      <div class="card">
+        <div class="metric">
+          <div>
+            <div class="label">Servers up</div>
+            <div id="upCount" class="value">—</div>
+          </div>
+          <span class="badge ok">OK</span>
+        </div>
+        <svg class="spark" viewBox="0 0 100 20"><path id="spark-up" d="" fill="none" stroke="var(--accent)" stroke-width="2"/></svg>
+      </div>
+      <div class="card">
+        <div class="metric">
+          <div>
+            <div class="label">Servers down</div>
+            <div id="downCount" class="value">—</div>
+          </div>
+          <span class="badge bad">Needs attention</span>
+        </div>
+        <svg class="spark" viewBox="0 0 100 20"><path id="spark-down" d="" fill="none" stroke="var(--bad)" stroke-width="2"/></svg>
+      </div>
+      <div class="card">
+        <div class="metric">
+          <div>
+            <div class="label">Average CPU</div>
+            <div id="avgCpu" class="value">—%</div>
+          </div>
+          <span id="cpuBadge" class="badge ok">Low</span>
+        </div>
+        <svg class="spark" viewBox="0 0 100 20"><path id="spark-cpu" d="" fill="none" stroke="var(--accent)" stroke-width="2"/></svg>
+      </div>
+      <div class="card">
+        <div class="metric">
+          <div>
+            <div class="label">Average RAM</div>
+            <div id="avgRam" class="value">—%</div>
+          </div>
+          <span id="ramBadge" class="badge ok">Low</span>
+        </div>
+        <svg class="spark" viewBox="0 0 100 20"><path id="spark-ram" d="" fill="none" stroke="var(--warn)" stroke-width="2"/></svg>
+      </div>
+
+      <div class="card wide">
+        <table class="table" id="serversTable">
+          <thead class="thead">
+            <tr>
+              <th>Server</th>
+              <th>CPU</th>
+              <th>RAM</th>
+              <th>Disk</th>
+              <th>Network (In/Out)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <div class="footer">
+          <div>Last updated: <span id="lastUpdated">—</span></div>
+          <div class="pill">Refresh rate: <span id="intervalLabel" style="margin-inline:6px;">10s</span> <input id="interval" type="range" min="5" max="60" value="10"/></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Alerts drawer -->
+  <div id="alertsDrawer" class="drawer" aria-hidden="true">
+    <div class="backdrop" id="alertsBackdrop"></div>
+    <aside class="panel" role="dialog" aria-labelledby="alertsTitle">
+      <div class="head">
+        <strong id="alertsTitle">Alerts</strong>
+        <button id="closeAlerts">Close</button>
+      </div>
+      <div class="list" id="alertsList">
+        <!-- Filled dynamically -->
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    // === Config ===
+    // NOTE: metrics endpoint stays as in your original build.
+    const METRICS_API = "/api/metrics";
+    const ALERTS_API = "/api/alerts?limit=50";
+    let POLL_INTERVAL = 10000; // ms
+    let pollHandle = null;
+
+    // === Helpers ===
+    const $ = (id)=>document.getElementById(id);
+    const fmt = (n)=> new Intl.NumberFormat('en-US').format(n);
+    const pct = (n)=> `${Math.round(n)}%`;
+    const nowStr = ()=> new Date().toLocaleTimeString('en-US');
+    const clamp = (min, v, max)=> Math.max(min, Math.min(v, max));
+
+    function bind(id, type, handler){
+      const el = $(id);
+      if(!el) return;
+      el.addEventListener(type, handler);
+    }
+    function linePath(values){
+      if(!values || !values.length) return "";
+      const max = Math.max(...values, 1);
+      const min = Math.min(...values, 0);
+      const span = Math.max(max-min, 1);
+      const step = values.length > 1 ? 100/(values.length-1) : 100;
+      return values.map((v,i)=>{
+        const x = i*step;
+        const y = 20 - ((v-min)/span)*20;
+        return (i?"L":"M")+x+","+y;
+      }).join(" ");
+    }
+    const barWidth = (p)=> clamp(0,p,100)+"%";
+    function badgeByLevel(p){
+      if(p >= 90) return {cls:"bad", text:"Very high"};
+      if(p >= 75) return {cls:"warn", text:"High"};
+      return {cls:"ok", text:"Low"};
+    }
+
+    // === Table ===
+    function rowHtml(s){
+      const ramPct = s.ramTotal ? (s.ramUsed/s.ramTotal*100) : (s.ram ?? 0);
+      const diskPct = s.diskTotal ? (s.diskUsed/s.diskTotal*100) : (s.disk ?? 0);
+      return `
+        <tr class="row" data-name="${(s.name||"").toLowerCase()}" data-ip="${(s.ip||"").toLowerCase()}" data-status="${s.status}">
+          <td>
+            <div class="server">
+              <span class="dot ${s.status === 'up' ? 'up' : 'down'}"></span>
+              <div>
+                <div style="font-weight:600">${s.name||'—'}</div>
+                <div style="color:var(--muted);font-size:12px">${s.ip||''}</div>
+              </div>
+            </div>
+          </td>
+          <td style="min-width:150px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px">
+              <span>Usage</span><span>${pct(s.cpu||0)}</span>
+            </div>
+            <div class="progress"><div class="bar cpu" style="width:${barWidth(s.cpu||0)}"></div></div>
+          </td>
+          <td style="min-width:150px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px">
+              <span>Usage</span><span>${pct(ramPct)}</span>
+            </div>
+            <div class="progress"><div class="bar ram" style="width:${barWidth(ramPct)}"></div></div>
+          </td>
+          <td style="min-width:150px">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px">
+              <span>Usage</span><span>${pct(diskPct)}</span>
+            </div>
+            <div class="progress"><div class="bar disk" style="width:${barWidth(diskPct)}"></div></div>
+          </td>
+          <td style="white-space:nowrap">${fmt(s.netIn||0)} ↓ / ${fmt(s.netOut||0)} ↑</td>
+          <td><span class="badge ${s.status==='up'?'ok':'bad'}">${s.status==='up'?'Up':'Down'}</span></td>
+        </tr>`;
+    }
+
+    function applyFilters(){
+      const q = ($("search")?.value || "").toLowerCase();
+      const f = $("statusFilter")?.value || 'all';
+      document.querySelectorAll('#tbody .row').forEach(tr=>{
+        const byText = tr.dataset.name.includes(q) || tr.dataset.ip.includes(q);
+        const byStatus = (f==='all') || (tr.dataset.status===f);
+        tr.style.display = (byText && byStatus) ? '' : 'none';
+      });
+    }
+
+    // === Metrics ===
+    async function fetchMetrics(){
+      $("loading")?.classList.add('show');
+      try{
+        const res = await fetch(METRICS_API, {cache:'no-store'});
+        if(!res.ok) throw new Error("HTTP "+res.status);
+        const data = await res.json();
+        renderMetrics(data, /*demo*/ false);
+      }catch(err){
+        console.warn('Falling back to demo data:', err?.message || err);
+        renderMetrics(mockData(), /*demo*/ true);
+      } finally {
+        $("loading")?.classList.remove('show');
+      }
+    }
+
+    function renderSparks(history){
+      const up= $("spark-up"), down=$("spark-down"), cpu=$("spark-cpu"), ram=$("spark-ram");
+      if(up) up.setAttribute("d", linePath(history.up||[]));
+      if(down) down.setAttribute("d", linePath(history.down||[]));
+      if(cpu) cpu.setAttribute("d", linePath(history.cpu||[]));
+      if(ram) ram.setAttribute("d", linePath(history.ram||[]));
+    }
+
+    function renderMetrics(data, demo){
+      $("demoBadge")?.classList.toggle('show', demo);
+
+      const servers = Array.isArray(data.servers) ? data.servers : [];
+      const up = servers.filter(s=>s.status==='up').length;
+      const down = servers.length - up;
+      $("upCount").textContent = up;
+      $("downCount").textContent = down;
+
+      const avgCpuVal = servers.length ? servers.reduce((a,b)=>a+(b.cpu||0),0)/servers.length : 0;
+      const avgRamVal = servers.length ? servers.reduce((a,b)=>{
+        const p = b.ramTotal ? (b.ramUsed/b.ramTotal*100) : (b.ram||0);return a+p;},0)/servers.length : 0;
+
+      $("avgCpu").textContent = pct(avgCpuVal);
+      $("avgRam").textContent = pct(avgRamVal);
+
+      const cpuB = badgeByLevel(avgCpuVal), ramB = badgeByLevel(avgRamVal);
+      $("cpuBadge").className = `badge ${cpuB.cls}`; $("cpuBadge").textContent = cpuB.text;
+      $("ramBadge").className = `badge ${ramB.cls}`; $("ramBadge").textContent = ramB.text;
+
+      renderSparks(data.history||{});
+
+      const tbody = $("tbody");
+      if(tbody){ tbody.innerHTML = servers.map(rowHtml).join(""); }
+      applyFilters();
+
+      $("lastUpdated").textContent = nowStr();
+    }
+
+    function startPolling(){
+      clearInterval(pollHandle);
+      pollHandle = setInterval(fetchMetrics, POLL_INTERVAL);
+    }
+
+    // === Alerts ===
+    let lastAlertIds = new Set(); // למעקב אחרי חדשים
+    async function fetchAlerts(autoOpen=true){
+      try{
+        const res = await fetch(ALERTS_API, {cache:'no-store'});
+        if(!res.ok) return;
+        const alerts = await res.json();
+
+        // badge & highlight
+        const count = alerts.length;
+        const countEl = $("alertsCount");
+        if (countEl){
+          countEl.style.display = count ? '' : 'none';
+          countEl.textContent = String(count);
+        }
+        const btn = $("alertsBtn");
+        btn?.classList.toggle("has-new", hasNewAlerts(alerts));
+
+        // fill drawer list
+        const list = $("alertsList");
+        if(list){
+          list.innerHTML = alerts.map(a => `
+            <div class="alert-item">
+              <div style="display:flex;justify-content:space-between;gap:8px;align-items:center">
+                <div><span class="badge ${a.severity==='CRITICAL'?'bad':'warn'} sev">${a.severity}</span> <strong>${a.category}</strong></div>
+                <div class="meta">${a.ts}</div>
+              </div>
+              <div style="margin-top:6px">${escapeHtml(a.description || '')}</div>
+              <div class="meta">
+                Host: <code>${a.hostname||''}</code>
+                ${a.file_path?` • File: <code>${a.file_path}</code>`:''}
+                ${a.sha256?` • SHA256: <code style="font-family:monospace">${a.sha256}</code>`:''}
+              </div>
+            </div>
+          `).join("");
+        }
+
+        // auto open on new alerts
+        if (autoOpen && hasNewAlerts(alerts)) openAlerts();
+
+        // update last seen
+        lastAlertIds = new Set(alerts.map(a=>a.id));
+      }catch(e){ /* ignore */ }
+    }
+    function hasNewAlerts(alerts){
+      if(!alerts || !alerts.length) return false;
+      for(const a of alerts){ if(!lastAlertIds.has(a.id)) return true; }
+      return false;
+    }
+    function openAlerts(){
+      $("alertsDrawer")?.classList.add("show");
+      $("alertsDrawer")?.setAttribute("aria-hidden","false");
+    }
+    function closeAlerts(){
+      $("alertsDrawer")?.classList.remove("show");
+      $("alertsDrawer")?.setAttribute("aria-hidden","true");
+    }
+
+    // small helpers
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
+    // === Events ===
+    bind('refreshBtn','click', fetchMetrics);
+    bind('search','input', applyFilters);
+    bind('statusFilter','change', applyFilters);
+    bind('interval','input', (e)=>{
+      const v = Number(e.target.value);
+      POLL_INTERVAL = v*1000; const lbl=$("intervalLabel"); if(lbl) lbl.textContent = v+"s"; startPolling();
+    });
+    bind('alertsBtn','click', ()=>{ openAlerts(); fetchAlerts(false); });
+    bind('closeAlerts','click', closeAlerts);
+    bind('alertsBackdrop','click', closeAlerts);
+
+    // === Demo data (fallback if metrics API missing) ===
+    function mockData(){
+      const names = ["web-1","web-2","db-1","cache-1","worker-1","worker-2","files-1","vpn-1"];
+      const arr = names.map((n,i)=>{
+        const up = Math.random()>0.1;
+        const cpu = Math.round(Math.random()*95);
+        const ramUsed = Math.round(2_000+Math.random()*14_000);
+        const ramTotal = 16_384;
+        const diskUsed = Math.round(50+Math.random()*420);
+        const diskTotal = 512;
+        return {
+          id:i+1,name:n,ip:`10.0.0.${i+11}`,
+          status: up? 'up' : 'down',
+          cpu,
+          ramUsed,ramTotal,
+          diskUsed,diskTotal,
+          netIn: Math.round(Math.random()*2000),
+          netOut: Math.round(Math.random()*2000)
+        };
+      });
+      const history = {
+        up: Array.from({length:20},()=>Math.round(60+Math.random()*35)),
+        down: Array.from({length:20},()=>Math.round(Math.random()*8)),
+        cpu: Array.from({length:20},()=>Math.round(25+Math.random()*50)),
+        ram: Array.from({length:20},()=>Math.round(30+Math.random()*55))
+      };
+      return {servers:arr, history};
+    }
+
+    // === Self tests ===
+    const SELFTEST = new URLSearchParams(location.search).has('selftest');
+    function assert(cond, msg){ return {ok: !!cond, msg}; }
+    function runSelfTests(){
+      const results = [];
+      const ids = ['search','statusFilter','refreshBtn','demoBadge','loading','interval','intervalLabel','tbody','upCount','downCount','avgCpu','avgRam','cpuBadge','ramBadge','spark-up','spark-down','spark-cpu','spark-ram','lastUpdated','alertsBtn'];
+      results.push(assert(ids.every(id=>$(id)), 'All required DOM elements exist'));
+      try { renderMetrics(mockData(), true); results.push(assert(true, 'renderMetrics(mockData) succeeded')); }
+      catch(e){ results.push(assert(false, 'renderMetrics(mockData) threw: '+e)); }
+      try { applyFilters(); results.push(assert(true, 'applyFilters() succeeded')); }
+      catch(e){ results.push(assert(false, 'applyFilters() threw: '+e)); }
+      console.log('[SELFTEST]', results);
+      const ok = results.filter(r=>r.ok).length, total = results.length;
+      const box = document.createElement('div');
+      box.className='testbox';
+      box.innerHTML = `<div><strong>SelfTest:</strong> <span class="${ok===total?'ok':'bad'}">${ok}/${total} passed</span></div>`;
+      document.body.appendChild(box);
+    }
+
+    // === Init ===
+    (function init(){
+      if(SELFTEST){ runSelfTests(); return; }
+      fetchMetrics();
+      fetchAlerts(false);
+      startPolling();
+      setInterval(()=>fetchAlerts(), 5000);
+    })();
+  </script>
+</body>
+</html>
