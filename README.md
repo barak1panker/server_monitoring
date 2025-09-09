@@ -156,6 +156,9 @@ curl -X POST http://localhost:8000/collect-data \
 * [ ] Package agent as Windows EXE + scheduling.
 
 ---
+<img width="1905" height="846" alt="image" src="https://github.com/user-attachments/assets/65e3fddf-60d4-4fc9-8085-c7fd288f66d5" />
+
+---
 
 ## 👤 Author
 
