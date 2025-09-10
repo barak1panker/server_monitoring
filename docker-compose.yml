@@ -1,9 +1,49 @@
-version: "3.8"
+version: "3.9"
 
 services:
-  server:
-    build: .
+  app:
+    build: ./APP
+    container_name: monitoring-app
+    env_file: .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      CPU_HIGH: ${CPU_HIGH:-90}
+      RAM_RATIO_HIGH: ${RAM_RATIO_HIGH:-0.9}
+      IOC_SCHEMA: ${IOC_SCHEMA:-public}
+      IOC_TABLE_NAME: ${IOC_TABLE_NAME}
+      IOC_COL_SHA: ${IOC_COL_SHA:-sha256}
+      DISABLE_IOC_SEED: ${DISABLE_IOC_SEED:-true}
+      IOC_FILE: ${IOC_FILE:-/app/static/ioc_hashes.txt}
+      SUSPICIOUS_HASHES: ${SUSPICIOUS_HASHES:-}
+    volumes:
+      - ./APP/logs:/app/logs
     ports:
       - "8000:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8000/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  agent:
+    build: ./agent
+    container_name: monitoring-agent
+    depends_on:
+      - app
     volumes:
-      - ./logs:/app/logs
+      - ${HOST_SCAN_PATH:-/tmp}:/host:ro
+    env_file: .env
+    environment:
+      SERVER_URL: http://app:8000
+      METRICS_INTERVAL: ${METRICS_INTERVAL:-5}
+      HASH_ENABLE: ${HASH_ENABLE:-true}
+      HASH_DIRS: ${HASH_DIRS:-/host}
+      HASH_INTERVAL: ${HASH_INTERVAL:-3600}
+      AGENT_MAX_SIZE_MB: ${AGENT_MAX_SIZE_MB:-100}
+      AGENT_MAX_FILES: ${AGENT_MAX_FILES:-5000}
+      AGENT_WORKERS: ${AGENT_WORKERS:-4}
+    command: ["/bin/sh", "./run_agent.sh"]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
