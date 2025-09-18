@@ -8,6 +8,7 @@ import requests
 import os
 import hashlib
 import time
+import json
 from datetime import datetime, timezone
 from typing import List, Optional, Iterable, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -23,7 +24,7 @@ def get_mac() -> str:
 
 # ---------- metrics ----------
 def collect_metrics() -> dict:
-    """אוסף מדדים מהמערכת המקומית ושלח לשרת"""
+    """אוסף מדדים מהמערכת המקומית"""
     cpu_percent = psutil.cpu_percent(interval=0.5)
     vmem = psutil.virtual_memory()
     disk = psutil.disk_usage("/")
@@ -64,7 +65,7 @@ def collect_metrics() -> dict:
 
 def send_metrics(server_url: str, payload: dict, timeout: int = 20) -> None:
     """שולח את המדדים לשרת"""
-    url = server_url.rstrip("/") + "/collect-metrics"  # חשוב: זה הנתיב הנכון
+    url = server_url.rstrip("/") + "/collect-metrics"
     r = requests.post(url, json=payload, timeout=timeout)
     r.raise_for_status()
 
@@ -80,7 +81,7 @@ def _iter_files(paths: Iterable[str], follow_symlinks: bool = False) -> Iterable
                 yield os.path.join(root, name)
 
 def _hash_file(fp: str, max_size_bytes: Optional[int]) -> Tuple[str, Optional[str], Optional[int], Optional[str]]:
-    """מחשב SHA-256 לקובץ יחיד, בכפוף למגבלת גודל"""
+    """מחשב SHA-256 לקובץ יחיד"""
     try:
         st = os.stat(fp)
         size = int(st.st_size)
@@ -104,7 +105,7 @@ def _ts_to_iso_utc(ts: float) -> str:
 def collect_file_hashes(
     dirs: List[str], max_size_mb: int, max_files: Optional[int], follow_symlinks: bool, workers: int
 ) -> List[dict]:
-    """סורק את התיקיות, מחשב האשים ומחזיר רשימת רשומות לשליחה לשרת"""
+    """סורק את התיקיות, מחשב האשים ומחזיר רשימת רשומות"""
     max_size_bytes = None if max_size_mb is None or max_size_mb < 0 else max_size_mb * 1024 * 1024
     files = []
     for i, fp in enumerate(_iter_files(dirs, follow_symlinks=follow_symlinks), start=1):
@@ -134,12 +135,51 @@ def collect_file_hashes(
     return results
 
 def send_hashes(server_url: str, hostname: str, hashes: List[dict], timeout: int = 60, chunk_size: int = 2000) -> None:
-    """שולח את רשימת ההאשים לשרת במנות"""
+    """שולח האשים לשרת במנות"""
     url = server_url.rstrip("/") + "/collect-hashes"
     for i in range(0, len(hashes), chunk_size):
         batch = hashes[i:i + chunk_size]
         r = requests.post(url, json={"hostname": hostname, "hashes": batch}, timeout=timeout)
         r.raise_for_status()
+
+# ---------- new: hash once ----------
+def generate_hashes_once(
+    dirs: List[str],
+    max_size_mb: int,
+    max_files: int,
+    workers: int,
+    output_file: str = "hashes.json"
+) -> None:
+    """סריקת האשים חד־פעמית ושמירה ל־JSON מקומי"""
+    print(f"[HASH ONCE] scanning {len(dirs)} dir(s): {dirs}")
+    hashes = collect_file_hashes(
+        dirs=dirs,
+        max_size_mb=max_size_mb,
+        max_files=max_files,
+        follow_symlinks=False,
+        workers=workers
+    )
+    print(f"[HASH ONCE] collected {len(hashes)} entries; saving to {output_file}...")
+    try:
+        with open(output_file, "w", encoding="utf-8") as f:
+            json.dump(hashes, f, ensure_ascii=False, indent=2)
+        print(f"[HASH ONCE OK] results saved to {output_file}")
+    except Exception as e:
+        print("[HASH ONCE ERROR]", e)
+
+def hash_once_loop(
+    dirs: List[str],
+    max_size_mb: int,
+    max_files: int,
+    workers: int,
+    output_file: str,
+    interval_hours: int = 5
+):
+    """מריץ hash פעם אחת ושומר ל-JSON, מחכה X שעות, וחוזר"""
+    while True:
+        generate_hashes_once(dirs, max_size_mb, max_files, workers, output_file)
+        print(f"[HASH ONCE LOOP] sleeping {interval_hours}h...")
+        time.sleep(interval_hours * 3600)
 
 # ---------- loops ----------
 def metrics_loop(server: str, interval: int):
@@ -186,15 +226,15 @@ def main():
     p.add_argument("--max-size-mb", type=int, default=100)
     p.add_argument("--max-files", type=int, default=5000)
     p.add_argument("--workers", type=int, default=4)
+    p.add_argument("--hash-once", action="store_true", help="Run hash scan every 5h and save to JSON")
+    p.add_argument("--hash-output", type=str, default="hashes.json", help="Path to save hash JSON file")
     args = p.parse_args()
 
-    # הערה: אם לא הועברו hash-dirs כארגומנט, ננסה מה-ENV או ניפול להום
     if args.hash_dirs:
         dirs = args.hash_dirs
     else:
         env_dirs = os.environ.get("HASH_DIRS")
         if env_dirs:
-            # מאפשר רווחים מופרדים
             dirs = env_dirs.split()
         elif os.path.isdir("/host"):
             dirs = ["/host"]
@@ -209,15 +249,21 @@ def main():
     t1.start()
 
     if args.hash_enable:
-        # תיקון: שימוש ב-args.max_size_mb (לא mB)
-        t2 = threading.Thread(
-            target=hash_loop,
-            args=(args.server, dirs, args.hash_interval, args.max_size_mb, args.max_files, args.workers),
-            daemon=True
-        )
-        t2.start()
+        if args.hash_once:
+            t2 = threading.Thread(
+                target=hash_once_loop,
+                args=(dirs, args.max_size_mb, args.max_files, args.workers, args.hash_output, 5),
+                daemon=True
+            )
+            t2.start()
+        else:
+            t2 = threading.Thread(
+                target=hash_loop,
+                args=(args.server, dirs, args.hash_interval, args.max_size_mb, args.max_files, args.workers),
+                daemon=True
+            )
+            t2.start()
 
-    # שמירה על התהליך חי
     while True:
         time.sleep(3600)
 

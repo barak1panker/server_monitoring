@@ -181,7 +181,7 @@ def send_hashes(server_url: str, hostname: str, hashes: List[dict], timeout: int
 # -------- Runner --------
 def main():
     parser = argparse.ArgumentParser(description="Local test agent (sends metrics/hashes from this machine).")
-    parser.add_argument("--server", default=os.getenv("SERVER_URL", "http://host.docker.internal:8000"))
+    parser.add_argument("--server", default=os.getenv("SERVER_URL", "http://localhost:8000"))
     parser.add_argument("--metrics-interval", type=int, default=int(os.getenv("METRICS_INTERVAL", "5")))
     parser.add_argument("--hash", dest="hash_enable", action="store_true", default=os.getenv("HASH_ENABLE", "true").lower()=="true")
     parser.add_argument("--hash-dirs", nargs="*", default=None, help="Dirs to scan; default: user's home")
