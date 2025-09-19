@@ -1,0 +1,97 @@
+{
+  "time_local": "2025-09-19T07:00:39",
+  "hostname": "4ab0545874dc",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.41",
+  "mac_address": "fa:3c:3f:87:4c:0e",
+  "cpu": 0.0,
+  "ramTotal": 8212471808,
+  "ramUsed": 1088249856,
+  "diskTotal": 1081101176832,
+  "diskUsed": 2727759872,
+  "processes": [
+    {
+      "pid": 1,
+      "name": "python"
+    }
+  ],
+  "connections": [
+    {
+      "laddr": "172.20.0.4:43070",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:53540",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "127.0.0.11:58563",
+      "raddr": null,
+      "status": "NONE",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:43834",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:51184",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:45810",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:45826",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:43824",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:51200",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:33752",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:33756",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:43082",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "127.0.0.11:44347",
+      "raddr": null,
+      "status": "LISTEN",
+      "pid": null
+    }
+  ]
+}

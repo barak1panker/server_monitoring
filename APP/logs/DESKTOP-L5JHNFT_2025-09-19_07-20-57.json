@@ -1,0 +1,4215 @@
+{
+  "time_local": "2025-09-19T10:20:57",
+  "hostname": "DESKTOP-L5JHNFT",
+  "platform": "Windows-10-10.0.26100-SP0",
+  "mac_address": "f8:ac:65:14:70:a2",
+  "cpu": 71.5,
+  "ramTotal": 16942497792,
+  "ramUsed": 13336203264,
+  "diskTotal": 510361858048,
+  "diskUsed": 332470599680,
+  "processes": [
+    {
+      "name": "System Idle Process",
+      "pid": 0
+    },
+    {
+      "name": "System",
+      "pid": 4
+    },
+    {
+      "name": "",
+      "pid": 140
+    },
+    {
+      "name": "Registry",
+      "pid": 180
+    },
+    {
+      "name": "csrss.exe",
+      "pid": 732
+    },
+    {
+      "name": "smss.exe",
+      "pid": 748
+    },
+    {
+      "name": "SecurityHealthSystray.exe",
+      "pid": 888
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1068
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1112
+    },
+    {
+      "name": "wininit.exe",
+      "pid": 1120
+    },
+    {
+      "name": "csrss.exe",
+      "pid": 1128
+    },
+    {
+      "name": "services.exe",
+      "pid": 1192
+    },
+    {
+      "name": "LsaIso.exe",
+      "pid": 1200
+    },
+    {
+      "name": "Code.exe",
+      "pid": 1212
+    },
+    {
+      "name": "python.exe",
+      "pid": 1216
+    },
+    {
+      "name": "lsass.exe",
+      "pid": 1220
+    },
+    {
+      "name": "winlogon.exe",
+      "pid": 1288
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1424
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1452
+    },
+    {
+      "name": "fontdrvhost.exe",
+      "pid": 1456
+    },
+    {
+      "name": "fontdrvhost.exe",
+      "pid": 1460
+    },
+    {
+      "name": "Widgets.exe",
+      "pid": 1476
+    },
+    {
+      "name": "WUDFHost.exe",
+      "pid": 1484
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1596
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1612
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1640
+    },
+    {
+      "name": "dwm.exe",
+      "pid": 1728
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1784
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1800
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1828
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1860
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1868
+    },
+    {
+      "name": "GitHubDesktop.exe",
+      "pid": 1916
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 1968
+    },
+    {
+      "name": "atiesrxx.exe",
+      "pid": 2096
+    },
+    {
+      "name": "IntelCpHDCPSvc.exe",
+      "pid": 2112
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2136
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2152
+    },
+    {
+      "name": "SecurityHealthService.exe",
+      "pid": 2228
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2248
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2276
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2352
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2360
+    },
+    {
+      "name": "IntelCpHeciSvc.exe",
+      "pid": 2436
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2480
+    },
+    {
+      "name": "aesm_service.exe",
+      "pid": 2492
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2616
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2624
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2736
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 2776
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2800
+    },
+    {
+      "name": "SynTPEnhService.exe",
+      "pid": 2804
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 2836
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2872
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 2972
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3020
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3060
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3192
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3248
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 3256
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3324
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3336
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 3380
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3404
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3512
+    },
+    {
+      "name": "igfxCUIService.exe",
+      "pid": 3560
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3600
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3664
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3692
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3740
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 3768
+    },
+    {
+      "name": "atieclxx.exe",
+      "pid": 3892
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3900
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3908
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 3916
+    },
+    {
+      "name": "WUDFHost.exe",
+      "pid": 3924
+    },
+    {
+      "name": "Code.exe",
+      "pid": 4028
+    },
+    {
+      "name": "MemCompression",
+      "pid": 4036
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 4080
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 4088
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 4140
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 4176
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 4264
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 4296
+    },
+    {
+      "name": "WUDFHost.exe",
+      "pid": 4312
+    },
+    {
+      "name": "pgAdmin4.exe",
+      "pid": 4368
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 4424
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 4456
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 4464
+    },
+    {
+      "name": "McUICnt.exe",
+      "pid": 4680
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 4900
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 4912
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 4984
+    },
+    {
+      "name": "spoolsv.exe",
+      "pid": 5088
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 5160
+    },
+    {
+      "name": "python.exe",
+      "pid": 5192
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 5208
+    },
+    {
+      "name": "ApsInsSvc.exe",
+      "pid": 5248
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 5260
+    },
+    {
+      "name": "CxAudioSvc.exe",
+      "pid": 5268
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 5288
+    },
+    {
+      "name": "sqlwriter.exe",
+      "pid": 5304
+    },
+    {
+      "name": "CxAudMsg64.exe",
+      "pid": 5312
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 5356
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 5376
+    },
+    {
+      "name": "DAX3API.exe",
+      "pid": 5396
+    },
+    {
+      "name": "OneApp.IGCC.WinService.exe",
+      "pid": 5420
+    },
+    {
+      "name": "ibmpmsvc.exe",
+      "pid": 5432
+    },
+    {
+      "name": "postgres.exe",
+      "pid": 5452
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 5528
+    },
+    {
+      "name": "Lenovo.Modern.ImController.exe",
+      "pid": 5536
+    },
+    {
+      "name": "jhi_service.exe",
+      "pid": 5572
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 5608
+    },
+    {
+      "name": "IntelAudioService.exe",
+      "pid": 5616
+    },
+    {
+      "name": "EasyResume.exe",
+      "pid": 5624
+    },
+    {
+      "name": "ApsInsMonSvc.exe",
+      "pid": 5644
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 5652
+    },
+    {
+      "name": "WUDFHost.exe",
+      "pid": 5660
+    },
+    {
+      "name": "postgres.exe",
+      "pid": 5688
+    },
+    {
+      "name": "mfemms.exe",
+      "pid": 5732
+    },
+    {
+      "name": "NgcIso.exe",
+      "pid": 5740
+    },
+    {
+      "name": "LITSSvc.exe",
+      "pid": 5772
+    },
+    {
+      "name": "ModuleCoreService.exe",
+      "pid": 5816
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 5832
+    },
+    {
+      "name": "esif_uf.exe",
+      "pid": 5872
+    },
+    {
+      "name": "ServiceHelper.Agent.exe",
+      "pid": 5892
+    },
+    {
+      "name": "PEFService.exe",
+      "pid": 6008
+    },
+    {
+      "name": "conhost.exe",
+      "pid": 6016
+    },
+    {
+      "name": "pg_ctl.exe",
+      "pid": 6028
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 6052
+    },
+    {
+      "name": "sqlservr.exe",
+      "pid": 6120
+    },
+    {
+      "name": "pgAdmin4.exe",
+      "pid": 6156
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 6168
+    },
+    {
+      "name": "RstMwService.exe",
+      "pid": 6204
+    },
+    {
+      "name": "SessionService.exe",
+      "pid": 6248
+    },
+    {
+      "name": "mysqld.exe",
+      "pid": 6380
+    },
+    {
+      "name": "sqlceip.exe",
+      "pid": 6392
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 6404
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 6412
+    },
+    {
+      "name": "PhoneExperienceHost.exe",
+      "pid": 6436
+    },
+    {
+      "name": "conhost.exe",
+      "pid": 6440
+    },
+    {
+      "name": "tphkload.exe",
+      "pid": 6508
+    },
+    {
+      "name": "WMIRegistrationService.exe",
+      "pid": 6516
+    },
+    {
+      "name": "Docker Desktop.exe",
+      "pid": 6532
+    },
+    {
+      "name": "LenovoVantageService.exe",
+      "pid": 6572
+    },
+    {
+      "name": "Copilot.exe",
+      "pid": 6656
+    },
+    {
+      "name": "MMSSHOST.exe",
+      "pid": 6704
+    },
+    {
+      "name": "wslservice.exe",
+      "pid": 6740
+    },
+    {
+      "name": "PresentationFontCache.exe",
+      "pid": 6836
+    },
+    {
+      "name": "taskhostw.exe",
+      "pid": 7136
+    },
+    {
+      "name": "msedge.exe",
+      "pid": 7220
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 7368
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 7472
+    },
+    {
+      "name": "postgres.exe",
+      "pid": 7504
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 7712
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 7728
+    },
+    {
+      "name": "mysqld.exe",
+      "pid": 7816
+    },
+    {
+      "name": "conhost.exe",
+      "pid": 7964
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 8256
+    },
+    {
+      "name": "DAX3API.exe",
+      "pid": 8384
+    },
+    {
+      "name": "mfevtps.exe",
+      "pid": 8420
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 8476
+    },
+    {
+      "name": "postgres.exe",
+      "pid": 8520
+    },
+    {
+      "name": "ProtectedModuleHost.exe",
+      "pid": 8684
+    },
+    {
+      "name": "postgres.exe",
+      "pid": 8912
+    },
+    {
+      "name": "postgres.exe",
+      "pid": 8936
+    },
+    {
+      "name": "postgres.exe",
+      "pid": 8944
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 8968
+    },
+    {
+      "name": "Code.exe",
+      "pid": 9000
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 9060
+    },
+    {
+      "name": "McCSPServiceHost.exe",
+      "pid": 9196
+    },
+    {
+      "name": "postgres.exe",
+      "pid": 9204
+    },
+    {
+      "name": "postgres.exe",
+      "pid": 9212
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 9524
+    },
+    {
+      "name": "FileCoAuth.exe",
+      "pid": 9624
+    },
+    {
+      "name": "com.docker.build.exe",
+      "pid": 9692
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 9780
+    },
+    {
+      "name": "Code.exe",
+      "pid": 9864
+    },
+    {
+      "name": "tposd.exe",
+      "pid": 9924
+    },
+    {
+      "name": "shtctky.exe",
+      "pid": 9932
+    },
+    {
+      "name": "Code.exe",
+      "pid": 9984
+    },
+    {
+      "name": "QcShm.exe",
+      "pid": 10064
+    },
+    {
+      "name": "SynTPEnh.exe",
+      "pid": 10080
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "pid": 10228
+    },
+    {
+      "name": "PowerMgr.exe",
+      "pid": 10272
+    },
+    {
+      "name": "OfficeClickToRun.exe",
+      "pid": 10396
+    },
+    {
+      "name": "com.docker.dev-envs.exe",
+      "pid": 10416
+    },
+    {
+      "name": "Docker Desktop.exe",
+      "pid": 10672
+    },
+    {
+      "name": "com.docker.backend.exe",
+      "pid": 10724
+    },
+    {
+      "name": "sihost.exe",
+      "pid": 10824
+    },
+    {
+      "name": "CrossDeviceResume.exe",
+      "pid": 10852
+    },
+    {
+      "name": "conhost.exe",
+      "pid": 11044
+    },
+    {
+      "name": "igfxEM.exe",
+      "pid": 11052
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 11116
+    },
+    {
+      "name": "Discord.exe",
+      "pid": 11204
+    },
+    {
+      "name": "mcshield.exe",
+      "pid": 11236
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 11248
+    },
+    {
+      "name": "wlanext.exe",
+      "pid": 11276
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 11312
+    },
+    {
+      "name": "Code.exe",
+      "pid": 11320
+    },
+    {
+      "name": "explorer.exe",
+      "pid": 11404
+    },
+    {
+      "name": "ShellHost.exe",
+      "pid": 11424
+    },
+    {
+      "name": "backgroundTaskHost.exe",
+      "pid": 11448
+    },
+    {
+      "name": "GitHubDesktop.exe",
+      "pid": 11712
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 11812
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "pid": 11952
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 11984
+    },
+    {
+      "name": "AggregatorHost.exe",
+      "pid": 12116
+    },
+    {
+      "name": "TextInputHost.exe",
+      "pid": 12420
+    },
+    {
+      "name": "Discord.exe",
+      "pid": 12476
+    },
+    {
+      "name": "CrossDeviceService.exe",
+      "pid": 12556
+    },
+    {
+      "name": "MfeAVSvc.exe",
+      "pid": 12588
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 12680
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 12760
+    },
+    {
+      "name": "CAudioFilterAgent64.exe",
+      "pid": 12844
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 13152
+    },
+    {
+      "name": "Code.exe",
+      "pid": 13376
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 13384
+    },
+    {
+      "name": "Code.exe",
+      "pid": 13424
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 13504
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 13544
+    },
+    {
+      "name": "UserOOBEBroker.exe",
+      "pid": 13576
+    },
+    {
+      "name": "Discord.exe",
+      "pid": 13588
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "pid": 13724
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 13852
+    },
+    {
+      "name": "SearchHost.exe",
+      "pid": 13924
+    },
+    {
+      "name": "StartMenuExperienceHost.exe",
+      "pid": 13948
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 14000
+    },
+    {
+      "name": "powershell.exe",
+      "pid": 14088
+    },
+    {
+      "name": "AppVShNotify.exe",
+      "pid": 14144
+    },
+    {
+      "name": "WidgetService.exe",
+      "pid": 14180
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "pid": 14236
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 14252
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "pid": 14332
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 14400
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 14524
+    },
+    {
+      "name": "Code.exe",
+      "pid": 14568
+    },
+    {
+      "name": "ModuleCoreService.exe",
+      "pid": 14640
+    },
+    {
+      "name": "conhost.exe",
+      "pid": 14652
+    },
+    {
+      "name": "mcapexe.exe",
+      "pid": 14688
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 14920
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 15004
+    },
+    {
+      "name": "ctfmon.exe",
+      "pid": 15028
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 15216
+    },
+    {
+      "name": "Discord.exe",
+      "pid": 15720
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 15768
+    },
+    {
+      "name": "Flow.exe",
+      "pid": 15940
+    },
+    {
+      "name": "notepad++.exe",
+      "pid": 15968
+    },
+    {
+      "name": "conhost.exe",
+      "pid": 16144
+    },
+    {
+      "name": "MpDefenderCoreService.exe",
+      "pid": 16556
+    },
+    {
+      "name": "com.docker.backend.exe",
+      "pid": 16576
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 16664
+    },
+    {
+      "name": "SearchIndexer.exe",
+      "pid": 16684
+    },
+    {
+      "name": "NisSrv.exe",
+      "pid": 16824
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 16908
+    },
+    {
+      "name": "GitHubDesktop.exe",
+      "pid": 16948
+    },
+    {
+      "name": "GitHubDesktop.exe",
+      "pid": 16968
+    },
+    {
+      "name": "ShellExperienceHost.exe",
+      "pid": 16984
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 17064
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 17224
+    },
+    {
+      "name": "OneDrive.exe",
+      "pid": 17420
+    },
+    {
+      "name": "conhost.exe",
+      "pid": 17448
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 17912
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 18044
+    },
+    {
+      "name": "Discord.exe",
+      "pid": 18160
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 18204
+    },
+    {
+      "name": "OneDrive.Sync.Service.exe",
+      "pid": 18212
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 18396
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "pid": 18484
+    },
+    {
+      "name": "conhost.exe",
+      "pid": 18516
+    },
+    {
+      "name": "pet.exe",
+      "pid": 18524
+    },
+    {
+      "name": "powershell.exe",
+      "pid": 18532
+    },
+    {
+      "name": "msteams.exe",
+      "pid": 18552
+    },
+    {
+      "name": "Docker Desktop.exe",
+      "pid": 18568
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 18576
+    },
+    {
+      "name": "Code.exe",
+      "pid": 18736
+    },
+    {
+      "name": "powershell.exe",
+      "pid": 18740
+    },
+    {
+      "name": "conhost.exe",
+      "pid": 18752
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "pid": 19168
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 19188
+    },
+    {
+      "name": "Code.exe",
+      "pid": 19240
+    },
+    {
+      "name": "svchost.exe",
+      "pid": 19260
+    },
+    {
+      "name": "MsMpEng.exe",
+      "pid": 19284
+    },
+    {
+      "name": "Discord.exe",
+      "pid": 19292
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 19476
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 19580
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 19588
+    },
+    {
+      "name": "msedgewebview2.exe",
+      "pid": 19656
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 19772
+    },
+    {
+      "name": "RuntimeBroker.exe",
+      "pid": 19916
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 20088
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 20096
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 20248
+    },
+    {
+      "name": "Code.exe",
+      "pid": 21100
+    },
+    {
+      "name": "WzPreloader.exe",
+      "pid": 21112
+    },
+    {
+      "name": "WhatsApp.exe",
+      "pid": 21200
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 21284
+    },
+    {
+      "name": "chrome.exe",
+      "pid": 21316
+    },
+    {
+      "name": "conhost.exe",
+      "pid": 21368
+    },
+    {
+      "name": "McSmtFwk.exe",
+      "pid": 21700
+    }
+  ],
+  "connections": [
+    {
+      "laddr": "127.0.0.1:47461",
+      "raddr": "127.0.0.1:47462",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47523",
+      "raddr": "127.0.0.1:47524",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44888",
+      "raddr": "127.0.0.1:44889",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45999",
+      "raddr": "127.0.0.1:46000",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61763",
+      "raddr": "127.0.0.1:61764",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41345",
+      "raddr": "127.0.0.1:5050",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41857",
+      "raddr": "127.0.0.1:41858",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43416",
+      "raddr": "127.0.0.1:43417",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43724",
+      "raddr": "127.0.0.1:43725",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44054",
+      "raddr": "127.0.0.1:44055",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43516",
+      "raddr": "127.0.0.1:43517",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47345",
+      "raddr": "127.0.0.1:47346",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44672",
+      "raddr": "127.0.0.1:44673",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47133",
+      "raddr": "127.0.0.1:47134",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42102",
+      "raddr": "127.0.0.1:42103",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41741",
+      "raddr": "127.0.0.1:41742",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42334",
+      "raddr": "127.0.0.1:42335",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43164",
+      "raddr": "127.0.0.1:43165",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44328",
+      "raddr": "127.0.0.1:44329",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45317",
+      "raddr": "127.0.0.1:45318",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44864",
+      "raddr": "127.0.0.1:44865",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45625",
+      "raddr": "127.0.0.1:45626",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45727",
+      "raddr": "127.0.0.1:45728",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44668",
+      "raddr": "127.0.0.1:44669",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45769",
+      "raddr": "127.0.0.1:45770",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44018",
+      "raddr": "127.0.0.1:44019",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47255",
+      "raddr": "127.0.0.1:47256",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47489",
+      "raddr": "127.0.0.1:47490",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47739",
+      "raddr": "127.0.0.1:47740",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61319",
+      "raddr": "127.0.0.1:61320",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41957",
+      "raddr": "127.0.0.1:41958",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43356",
+      "raddr": "127.0.0.1:43357",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61948",
+      "raddr": "127.0.0.1:61949",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "0.0.0.0:123",
+      "raddr": null,
+      "status": "NONE",
+      "pid": 18396
+    },
+    {
+      "laddr": "127.0.0.1:43456",
+      "raddr": "127.0.0.1:43457",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43862",
+      "raddr": "127.0.0.1:43863",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42836",
+      "raddr": "127.0.0.1:42837",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43144",
+      "raddr": "127.0.0.1:43145",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44007",
+      "raddr": "127.0.0.1:44008",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46429",
+      "raddr": "127.0.0.1:46430",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "0.0.0.0:59701",
+      "raddr": null,
+      "status": "NONE",
+      "pid": 3664
+    },
+    {
+      "laddr": "127.0.0.1:46171",
+      "raddr": "127.0.0.1:46172",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47487",
+      "raddr": "127.0.0.1:47488",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42942",
+      "raddr": "127.0.0.1:42943",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47077",
+      "raddr": "127.0.0.1:47078",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42354",
+      "raddr": "127.0.0.1:42355",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:62010",
+      "raddr": "127.0.0.1:62011",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45024",
+      "raddr": "127.0.0.1:45025",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43750",
+      "raddr": "127.0.0.1:43751",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "0.0.0.0:49666",
+      "raddr": null,
+      "status": "LISTEN",
+      "pid": 1452
+    },
+    {
+      "laddr": "127.0.0.1:43518",
+      "raddr": "127.0.0.1:43519",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42142",
+      "raddr": "127.0.0.1:42143",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46929",
+      "raddr": "127.0.0.1:46930",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44852",
+      "raddr": "127.0.0.1:44853",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41885",
+      "raddr": "127.0.0.1:41886",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43858",
+      "raddr": "127.0.0.1:43859",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44656",
+      "raddr": "127.0.0.1:44657",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44964",
+      "raddr": "127.0.0.1:44965",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45655",
+      "raddr": "127.0.0.1:45656",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45757",
+      "raddr": "127.0.0.1:45758",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47143",
+      "raddr": "127.0.0.1:47144",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61396",
+      "raddr": "127.0.0.1:61397",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41633",
+      "raddr": "127.0.0.1:41634",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41735",
+      "raddr": "127.0.0.1:41736",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46673",
+      "raddr": "127.0.0.1:46674",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47779",
+      "raddr": "127.0.0.1:47780",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43386",
+      "raddr": "127.0.0.1:43387",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41535",
+      "raddr": "127.0.0.1:41536",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44098",
+      "raddr": "127.0.0.1:44099",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45209",
+      "raddr": "127.0.0.1:45210",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42581",
+      "raddr": "127.0.0.1:42582",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61793",
+      "raddr": "127.0.0.1:61794",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42646",
+      "raddr": "127.0.0.1:42647",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44848",
+      "raddr": "127.0.0.1:44849",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46159",
+      "raddr": "127.0.0.1:46160",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46465",
+      "raddr": "127.0.0.1:46466",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46567",
+      "raddr": "127.0.0.1:46568",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61345",
+      "raddr": "127.0.0.1:61346",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41829",
+      "raddr": "127.0.0.1:41830",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42940",
+      "raddr": "127.0.0.1:42941",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43846",
+      "raddr": "127.0.0.1:43847",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43230",
+      "raddr": "127.0.0.1:43231",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45162",
+      "raddr": "127.0.0.1:45163",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41811",
+      "raddr": "127.0.0.1:41812",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44908",
+      "raddr": "127.0.0.1:44909",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:1434",
+      "raddr": null,
+      "status": "LISTEN",
+      "pid": 6120
+    },
+    {
+      "laddr": "127.0.0.1:45751",
+      "raddr": "127.0.0.1:45752",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47067",
+      "raddr": "127.0.0.1:47068",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47281",
+      "raddr": "127.0.0.1:47282",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45102",
+      "raddr": "127.0.0.1:45103",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46661",
+      "raddr": "127.0.0.1:46662",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46969",
+      "raddr": "127.0.0.1:46970",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61849",
+      "raddr": "127.0.0.1:61850",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61890",
+      "raddr": "127.0.0.1:61891",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47411",
+      "raddr": "127.0.0.1:47412",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41577",
+      "raddr": "127.0.0.1:41578",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61233",
+      "raddr": "127.0.0.1:61234",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44288",
+      "raddr": "127.0.0.1:44289",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43732",
+      "raddr": "127.0.0.1:43733",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47471",
+      "raddr": "127.0.0.1:47472",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42569",
+      "raddr": "127.0.0.1:42570",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43442",
+      "raddr": "127.0.0.1:43443",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41365",
+      "raddr": "127.0.0.1:41366",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43482",
+      "raddr": "127.0.0.1:43483",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44878",
+      "raddr": "127.0.0.1:44879",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45194",
+      "raddr": "127.0.0.1:45195",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41807",
+      "raddr": "127.0.0.1:41808",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45503",
+      "raddr": "127.0.0.1:45504",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47575",
+      "raddr": "127.0.0.1:47576",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47215",
+      "raddr": "127.0.0.1:47216",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46297",
+      "raddr": "127.0.0.1:46298",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41863",
+      "raddr": "127.0.0.1:41864",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46409",
+      "raddr": "127.0.0.1:46410",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61483",
+      "raddr": "127.0.0.1:61484",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43286",
+      "raddr": "127.0.0.1:43287",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:62034",
+      "raddr": "127.0.0.1:62035",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42728",
+      "raddr": "127.0.0.1:42729",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43728",
+      "raddr": "127.0.0.1:43729",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42565",
+      "raddr": "127.0.0.1:42566",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43078",
+      "raddr": "127.0.0.1:43079",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43180",
+      "raddr": "127.0.0.1:43181",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44184",
+      "raddr": "127.0.0.1:44185",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44432",
+      "raddr": "127.0.0.1:44433",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45150",
+      "raddr": "127.0.0.1:45151",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46701",
+      "raddr": "127.0.0.1:46702",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44626",
+      "raddr": "127.0.0.1:44627",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "::1:5433",
+      "raddr": "::1:34504",
+      "status": "ESTABLISHED",
+      "pid": 5688
+    },
+    {
+      "laddr": "127.0.0.1:44642",
+      "raddr": "127.0.0.1:44643",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44086",
+      "raddr": "127.0.0.1:44087",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45327",
+      "raddr": "127.0.0.1:45328",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47399",
+      "raddr": "127.0.0.1:47400",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "0.0.0.0:53",
+      "raddr": null,
+      "status": "NONE",
+      "pid": 3664
+    },
+    {
+      "laddr": "127.0.0.1:44276",
+      "raddr": "127.0.0.1:44277",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41759",
+      "raddr": "127.0.0.1:41760",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61926",
+      "raddr": "127.0.0.1:61927",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:57464",
+      "raddr": null,
+      "status": "NONE",
+      "pid": 8476
+    },
+    {
+      "laddr": "127.0.0.1:43430",
+      "raddr": "127.0.0.1:43431",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44282",
+      "raddr": "127.0.0.1:44283",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42308",
+      "raddr": "127.0.0.1:42309",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43624",
+      "raddr": "127.0.0.1:43625",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44426",
+      "raddr": "127.0.0.1:44427",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45491",
+      "raddr": "127.0.0.1:45492",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42366",
+      "raddr": "127.0.0.1:42367",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45849",
+      "raddr": "127.0.0.1:45850",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44974",
+      "raddr": "127.0.0.1:44975",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44686",
+      "raddr": "127.0.0.1:44687",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45777",
+      "raddr": "127.0.0.1:45778",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46085",
+      "raddr": "127.0.0.1:46086",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46097",
+      "raddr": "127.0.0.1:46098",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46405",
+      "raddr": "127.0.0.1:46406",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45128",
+      "raddr": "127.0.0.1:45129",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45641",
+      "raddr": "127.0.0.1:45642",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46995",
+      "raddr": "127.0.0.1:46996",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "192.168.175.1:137",
+      "raddr": null,
+      "status": "NONE",
+      "pid": 4
+    },
+    {
+      "laddr": "127.0.0.1:41755",
+      "raddr": "127.0.0.1:41756",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43622",
+      "raddr": "127.0.0.1:43623",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43066",
+      "raddr": "127.0.0.1:43067",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44778",
+      "raddr": "127.0.0.1:44779",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45691",
+      "raddr": "127.0.0.1:45692",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44528",
+      "raddr": "127.0.0.1:44529",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44570",
+      "raddr": "127.0.0.1:44571",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45845",
+      "raddr": "127.0.0.1:45846",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43879",
+      "raddr": "127.0.0.1:43880",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46839",
+      "raddr": "127.0.0.1:46840",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45993",
+      "raddr": "127.0.0.1:45994",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42509",
+      "raddr": "127.0.0.1:42510",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43620",
+      "raddr": "127.0.0.1:43621",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43062",
+      "raddr": "127.0.0.1:43063",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42814",
+      "raddr": "127.0.0.1:42815",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44168",
+      "raddr": "127.0.0.1:44169",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44270",
+      "raddr": "127.0.0.1:44271",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44414",
+      "raddr": "127.0.0.1:44415",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44210",
+      "raddr": "127.0.0.1:44211",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43210",
+      "raddr": "127.0.0.1:43211",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44013",
+      "raddr": "127.0.0.1:44014",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46393",
+      "raddr": "127.0.0.1:46394",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61509",
+      "raddr": "127.0.0.1:61510",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:62064",
+      "raddr": "127.0.0.1:62065",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46835",
+      "raddr": "127.0.0.1:46836",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46185",
+      "raddr": "127.0.0.1:46186",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45629",
+      "raddr": "127.0.0.1:45630",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47085",
+      "raddr": "127.0.0.1:47086",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:62054",
+      "raddr": "127.0.0.1:62055",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42060",
+      "raddr": "127.0.0.1:42061",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42698",
+      "raddr": "127.0.0.1:42699",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42694",
+      "raddr": "127.0.0.1:42695",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "::1:49669",
+      "raddr": null,
+      "status": "LISTEN",
+      "pid": 5572
+    },
+    {
+      "laddr": "127.0.0.1:47593",
+      "raddr": "127.0.0.1:47594",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45721",
+      "raddr": "127.0.0.1:45722",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:62060",
+      "raddr": "127.0.0.1:62061",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43909",
+      "raddr": "127.0.0.1:43910",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44011",
+      "raddr": "127.0.0.1:44012",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46731",
+      "raddr": "127.0.0.1:46732",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46977",
+      "raddr": "127.0.0.1:46978",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46259",
+      "raddr": "127.0.0.1:46260",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47533",
+      "raddr": "127.0.0.1:47534",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43608",
+      "raddr": "127.0.0.1:43609",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42605",
+      "raddr": "127.0.0.1:42606",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42503",
+      "raddr": "127.0.0.1:42504",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43758",
+      "raddr": "127.0.0.1:43759",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44001",
+      "raddr": "127.0.0.1:44002",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45429",
+      "raddr": "127.0.0.1:45430",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43352",
+      "raddr": "127.0.0.1:43353",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44306",
+      "raddr": "127.0.0.1:44307",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44408",
+      "raddr": "127.0.0.1:44409",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45469",
+      "raddr": "127.0.0.1:45470",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46173",
+      "raddr": "127.0.0.1:46174",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61906",
+      "raddr": "127.0.0.1:61907",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46531",
+      "raddr": "127.0.0.1:46532",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45257",
+      "raddr": "127.0.0.1:45258",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43492",
+      "raddr": "127.0.0.1:43493",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43244",
+      "raddr": "127.0.0.1:43245",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46973",
+      "raddr": "127.0.0.1:46974",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42037",
+      "raddr": "127.0.0.1:42038",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42428",
+      "raddr": "127.0.0.1:42429",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45509",
+      "raddr": "127.0.0.1:45510",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44748",
+      "raddr": "127.0.0.1:44749",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44850",
+      "raddr": "127.0.0.1:44851",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61287",
+      "raddr": "127.0.0.1:61288",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46521",
+      "raddr": "127.0.0.1:46522",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "::1:8000",
+      "raddr": "::1:55664",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45613",
+      "raddr": "127.0.0.1:45614",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41687",
+      "raddr": "127.0.0.1:41688",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45253",
+      "raddr": "127.0.0.1:45254",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47675",
+      "raddr": "127.0.0.1:47676",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41841",
+      "raddr": "127.0.0.1:41842",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43240",
+      "raddr": "127.0.0.1:43241",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61277",
+      "raddr": "127.0.0.1:61278",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42537",
+      "raddr": "127.0.0.1:42538",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43746",
+      "raddr": "127.0.0.1:43747",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61283",
+      "raddr": "127.0.0.1:61284",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46055",
+      "raddr": "127.0.0.1:46056",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42539",
+      "raddr": "127.0.0.1:42540",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46519",
+      "raddr": "127.0.0.1:46520",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "fe80::37b8:5640:29a8:ca4:1900",
+      "raddr": null,
+      "status": "NONE",
+      "pid": 8476
+    },
+    {
+      "laddr": "127.0.0.1:47619",
+      "raddr": "127.0.0.1:47620",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46961",
+      "raddr": "127.0.0.1:46962",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46525",
+      "raddr": "127.0.0.1:46526",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42314",
+      "raddr": "127.0.0.1:42315",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43630",
+      "raddr": "127.0.0.1:43631",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44736",
+      "raddr": "127.0.0.1:44737",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41665",
+      "raddr": "127.0.0.1:41666",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44250",
+      "raddr": "127.0.0.1:44251",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45094",
+      "raddr": "127.0.0.1:45095",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45361",
+      "raddr": "127.0.0.1:45362",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45609",
+      "raddr": "127.0.0.1:45610",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:62128",
+      "raddr": "127.0.0.1:62129",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42575",
+      "raddr": "127.0.0.1:42576",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47403",
+      "raddr": "127.0.0.1:47404",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46617",
+      "raddr": "127.0.0.1:46618",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47831",
+      "raddr": "127.0.0.1:47832",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42880",
+      "raddr": "127.0.0.1:42881",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45241",
+      "raddr": "127.0.0.1:45242",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44480",
+      "raddr": "127.0.0.1:44481",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46309",
+      "raddr": "127.0.0.1:46310",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46557",
+      "raddr": "127.0.0.1:46558",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61425",
+      "raddr": "127.0.0.1:61426",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "192.168.1.15:137",
+      "raddr": null,
+      "status": "NONE",
+      "pid": 4
+    },
+    {
+      "laddr": "127.0.0.1:47659",
+      "raddr": "127.0.0.1:47660",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41621",
+      "raddr": "127.0.0.1:41622",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47771",
+      "raddr": "127.0.0.1:47772",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41979",
+      "raddr": "127.0.0.1:41980",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44732",
+      "raddr": "127.0.0.1:44733",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61415",
+      "raddr": "127.0.0.1:61416",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43526",
+      "raddr": "127.0.0.1:43527",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42972",
+      "raddr": "127.0.0.1:42973",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43690",
+      "raddr": "127.0.0.1:43691",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46401",
+      "raddr": "127.0.0.1:46402",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:62040",
+      "raddr": "127.0.0.1:62041",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46151",
+      "raddr": "127.0.0.1:46152",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45863",
+      "raddr": "127.0.0.1:45864",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61421",
+      "raddr": "127.0.0.1:61422",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46193",
+      "raddr": "127.0.0.1:46194",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47547",
+      "raddr": "127.0.0.1:47548",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41713",
+      "raddr": "127.0.0.1:41714",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47061",
+      "raddr": "127.0.0.1:47062",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47299",
+      "raddr": "127.0.0.1:47300",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42414",
+      "raddr": "127.0.0.1:42415",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42166",
+      "raddr": "127.0.0.1:42167",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43730",
+      "raddr": "127.0.0.1:43731",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44182",
+      "raddr": "127.0.0.1:44183",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45895",
+      "raddr": "127.0.0.1:45896",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "0.0.0.0:2913",
+      "raddr": null,
+      "status": "LISTEN",
+      "pid": 5892
+    },
+    {
+      "laddr": "127.0.0.1:45747",
+      "raddr": "127.0.0.1:45748",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43670",
+      "raddr": "127.0.0.1:43671",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44986",
+      "raddr": "127.0.0.1:44987",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45499",
+      "raddr": "127.0.0.1:45500",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46545",
+      "raddr": "127.0.0.1:46546",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46853",
+      "raddr": "127.0.0.1:46854",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46955",
+      "raddr": "127.0.0.1:46956",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47295",
+      "raddr": "127.0.0.1:47296",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41461",
+      "raddr": "127.0.0.1:41462",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47819",
+      "raddr": "127.0.0.1:47820",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46755",
+      "raddr": "127.0.0.1:46756",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42523",
+      "raddr": "127.0.0.1:42524",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47801",
+      "raddr": "127.0.0.1:47802",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42162",
+      "raddr": "127.0.0.1:42163",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42204",
+      "raddr": "127.0.0.1:42205",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:62028",
+      "raddr": "127.0.0.1:62029",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43154",
+      "raddr": "127.0.0.1:43155",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42916",
+      "raddr": "127.0.0.1:42917",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42668",
+      "raddr": "127.0.0.1:42669",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44870",
+      "raddr": "127.0.0.1:44871",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "::1:54495",
+      "raddr": "::1:5433",
+      "status": "ESTABLISHED",
+      "pid": 1216
+    },
+    {
+      "laddr": "127.0.0.1:46181",
+      "raddr": "127.0.0.1:46182",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43110",
+      "raddr": "127.0.0.1:43111",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44464",
+      "raddr": "127.0.0.1:44465",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45182",
+      "raddr": "127.0.0.1:45183",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46293",
+      "raddr": "127.0.0.1:46294",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46951",
+      "raddr": "127.0.0.1:46952",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61519",
+      "raddr": "127.0.0.1:61520",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47643",
+      "raddr": "127.0.0.1:47644",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47355",
+      "raddr": "127.0.0.1:47356",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47685",
+      "raddr": "127.0.0.1:47686",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41851",
+      "raddr": "127.0.0.1:41852",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47797",
+      "raddr": "127.0.0.1:47798",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41963",
+      "raddr": "127.0.0.1:41964",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45943",
+      "raddr": "127.0.0.1:45944",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61851",
+      "raddr": "127.0.0.1:61852",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61263",
+      "raddr": "127.0.0.1:61264",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45735",
+      "raddr": "127.0.0.1:45736",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42664",
+      "raddr": "127.0.0.1:42665",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45086",
+      "raddr": "127.0.0.1:45087",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44100",
+      "raddr": "127.0.0.1:44101",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43812",
+      "raddr": "127.0.0.1:43813",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46797",
+      "raddr": "127.0.0.1:46798",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46991",
+      "raddr": "127.0.0.1:46992",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47093",
+      "raddr": "127.0.0.1:47094",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41599",
+      "raddr": "127.0.0.1:41600",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42150",
+      "raddr": "127.0.0.1:42151",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42192",
+      "raddr": "127.0.0.1:42193",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45375",
+      "raddr": "127.0.0.1:45376",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42304",
+      "raddr": "127.0.0.1:42305",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45178",
+      "raddr": "127.0.0.1:45179",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45733",
+      "raddr": "127.0.0.1:45734",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43654",
+      "raddr": "127.0.0.1:43655",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45483",
+      "raddr": "127.0.0.1:45484",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44722",
+      "raddr": "127.0.0.1:44723",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43696",
+      "raddr": "127.0.0.1:43697",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45585",
+      "raddr": "127.0.0.1:45586",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46879",
+      "raddr": "127.0.0.1:46880",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44420",
+      "raddr": "127.0.0.1:44421",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47083",
+      "raddr": "127.0.0.1:47084",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61253",
+      "raddr": "127.0.0.1:61254",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61737",
+      "raddr": "127.0.0.1:61738",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61839",
+      "raddr": "127.0.0.1:61840",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61251",
+      "raddr": "127.0.0.1:61252",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41891",
+      "raddr": "127.0.0.1:41892",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45877",
+      "raddr": "127.0.0.1:45878",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43444",
+      "raddr": "127.0.0.1:43445",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47741",
+      "raddr": "127.0.0.1:47742",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46217",
+      "raddr": "127.0.0.1:46218",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44298",
+      "raddr": "127.0.0.1:44299",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47673",
+      "raddr": "127.0.0.1:47674",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43094",
+      "raddr": "127.0.0.1:43095",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46277",
+      "raddr": "127.0.0.1:46278",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46607",
+      "raddr": "127.0.0.1:46608",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61485",
+      "raddr": "127.0.0.1:61486",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61998",
+      "raddr": "127.0.0.1:61999",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44958",
+      "raddr": "127.0.0.1:44959",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43684",
+      "raddr": "127.0.0.1:43685",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45513",
+      "raddr": "127.0.0.1:45514",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42442",
+      "raddr": "127.0.0.1:42443",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43792",
+      "raddr": "127.0.0.1:43793",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46975",
+      "raddr": "127.0.0.1:46976",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45803",
+      "raddr": "127.0.0.1:45804",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45215",
+      "raddr": "127.0.0.1:45216",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:62090",
+      "raddr": "127.0.0.1:62091",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42092",
+      "raddr": "127.0.0.1:42093",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61894",
+      "raddr": "127.0.0.1:61895",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42730",
+      "raddr": "127.0.0.1:42731",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44956",
+      "raddr": "127.0.0.1:44957",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42682",
+      "raddr": "127.0.0.1:42683",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46355",
+      "raddr": "127.0.0.1:46356",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45713",
+      "raddr": "127.0.0.1:45714",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44706",
+      "raddr": "127.0.0.1:44707",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43432",
+      "raddr": "127.0.0.1:43433",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47109",
+      "raddr": "127.0.0.1:47110",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47417",
+      "raddr": "127.0.0.1:47418",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43901",
+      "raddr": "127.0.0.1:43902",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45657",
+      "raddr": "127.0.0.1:45658",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47729",
+      "raddr": "127.0.0.1:47730",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42489",
+      "raddr": "127.0.0.1:42490",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47521",
+      "raddr": "127.0.0.1:47522",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42531",
+      "raddr": "127.0.0.1:42532",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61986",
+      "raddr": "127.0.0.1:61987",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44190",
+      "raddr": "127.0.0.1:44191",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42318",
+      "raddr": "127.0.0.1:42319",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61585",
+      "raddr": "127.0.0.1:61586",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43088",
+      "raddr": "127.0.0.1:43089",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43232",
+      "raddr": "127.0.0.1:43233",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46415",
+      "raddr": "127.0.0.1:46416",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45397",
+      "raddr": "127.0.0.1:45398",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46857",
+      "raddr": "127.0.0.1:46858",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44130",
+      "raddr": "127.0.0.1:44131",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47313",
+      "raddr": "127.0.0.1:47314",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45801",
+      "raddr": "127.0.0.1:45802",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47269",
+      "raddr": "127.0.0.1:47270",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47113",
+      "raddr": "127.0.0.1:47114",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61279",
+      "raddr": "127.0.0.1:61280",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45052",
+      "raddr": "127.0.0.1:45053",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61872",
+      "raddr": "127.0.0.1:61873",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43931",
+      "raddr": "127.0.0.1:43932",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47361",
+      "raddr": "127.0.0.1:47362",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47073",
+      "raddr": "127.0.0.1:47074",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:12459",
+      "raddr": "127.0.0.1:5050",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "0.0.0.0:56321",
+      "raddr": null,
+      "status": "NONE",
+      "pid": 4368
+    },
+    {
+      "laddr": "127.0.0.1:45437",
+      "raddr": "127.0.0.1:45438",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47509",
+      "raddr": "127.0.0.1:47510",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44438",
+      "raddr": "127.0.0.1:44439",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45549",
+      "raddr": "127.0.0.1:45550",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47005",
+      "raddr": "127.0.0.1:47006",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42714",
+      "raddr": "127.0.0.1:42715",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42118",
+      "raddr": "127.0.0.1:42119",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42426",
+      "raddr": "127.0.0.1:42427",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47149",
+      "raddr": "127.0.0.1:47150",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61118",
+      "raddr": "127.0.0.1:61119",
+      "status": "ESTABLISHED",
+      "pid": 5192
+    },
+    {
+      "laddr": "127.0.0.1:41757",
+      "raddr": "127.0.0.1:41758",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61371",
+      "raddr": "127.0.0.1:61372",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61573",
+      "raddr": "127.0.0.1:61574",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44290",
+      "raddr": "127.0.0.1:44291",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43016",
+      "raddr": "127.0.0.1:43017",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44936",
+      "raddr": "127.0.0.1:44937",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46047",
+      "raddr": "127.0.0.1:46048",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47401",
+      "raddr": "127.0.0.1:47402",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46845",
+      "raddr": "127.0.0.1:46846",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46947",
+      "raddr": "127.0.0.1:46948",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46359",
+      "raddr": "127.0.0.1:46360",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61723",
+      "raddr": "127.0.0.1:61724",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43124",
+      "raddr": "127.0.0.1:43125",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44984",
+      "raddr": "127.0.0.1:44985",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43710",
+      "raddr": "127.0.0.1:43711",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45196",
+      "raddr": "127.0.0.1:45197",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61984",
+      "raddr": "127.0.0.1:61985",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41437",
+      "raddr": "127.0.0.1:41438",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42515",
+      "raddr": "127.0.0.1:42516",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42062",
+      "raddr": "127.0.0.1:42063",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44576",
+      "raddr": "127.0.0.1:44577",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43216",
+      "raddr": "127.0.0.1:43217",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42968",
+      "raddr": "127.0.0.1:42969",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45277",
+      "raddr": "127.0.0.1:45278",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47543",
+      "raddr": "127.0.0.1:47544",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41709",
+      "raddr": "127.0.0.1:41710",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47655",
+      "raddr": "127.0.0.1:47656",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47757",
+      "raddr": "127.0.0.1:47758",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42106",
+      "raddr": "127.0.0.1:42107",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47499",
+      "raddr": "127.0.0.1:47500",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42744",
+      "raddr": "127.0.0.1:42745",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61455",
+      "raddr": "127.0.0.1:61456",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61924",
+      "raddr": "127.0.0.1:61925",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42852",
+      "raddr": "127.0.0.1:42853",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46035",
+      "raddr": "127.0.0.1:46036",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61711",
+      "raddr": "127.0.0.1:61712",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41789",
+      "raddr": "127.0.0.1:41790",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46945",
+      "raddr": "127.0.0.1:46946",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42599",
+      "raddr": "127.0.0.1:42600",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45337",
+      "raddr": "127.0.0.1:45338",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "::1:60869",
+      "raddr": null,
+      "status": "NONE",
+      "pid": 5688
+    },
+    {
+      "laddr": "127.0.0.1:42298",
+      "raddr": "127.0.0.1:42299",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44772",
+      "raddr": "127.0.0.1:44773",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45779",
+      "raddr": "127.0.0.1:45780",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46885",
+      "raddr": "127.0.0.1:46886",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41649",
+      "raddr": "127.0.0.1:41650",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:62122",
+      "raddr": "127.0.0.1:62123",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44520",
+      "raddr": "127.0.0.1:44521",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43246",
+      "raddr": "127.0.0.1:43247",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43554",
+      "raddr": "127.0.0.1:43555",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42555",
+      "raddr": "127.0.0.1:42556",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43656",
+      "raddr": "127.0.0.1:43657",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43666",
+      "raddr": "127.0.0.1:43667",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46581",
+      "raddr": "127.0.0.1:46582",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46737",
+      "raddr": "127.0.0.1:46738",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61707",
+      "raddr": "127.0.0.1:61708",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46693",
+      "raddr": "127.0.0.1:46694",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61809",
+      "raddr": "127.0.0.1:61810",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44460",
+      "raddr": "127.0.0.1:44461",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46769",
+      "raddr": "127.0.0.1:46770",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42088",
+      "raddr": "127.0.0.1:42089",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61912",
+      "raddr": "127.0.0.1:61913",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41997",
+      "raddr": "127.0.0.1:41998",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61551",
+      "raddr": "127.0.0.1:61552",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61593",
+      "raddr": "127.0.0.1:61594",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44268",
+      "raddr": "127.0.0.1:44269",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46065",
+      "raddr": "127.0.0.1:46066",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42994",
+      "raddr": "127.0.0.1:42995",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61601",
+      "raddr": "127.0.0.1:61602",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42344",
+      "raddr": "127.0.0.1:42345",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42043",
+      "raddr": "127.0.0.1:42044",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61355",
+      "raddr": "127.0.0.1:61356",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41637",
+      "raddr": "127.0.0.1:41638",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:47833",
+      "raddr": "127.0.0.1:47834",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:41995",
+      "raddr": "127.0.0.1:41996",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42436",
+      "raddr": "127.0.0.1:42437",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43542",
+      "raddr": "127.0.0.1:43543",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:42650",
+      "raddr": "127.0.0.1:42651",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:61797",
+      "raddr": "127.0.0.1:61798",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:43498",
+      "raddr": "127.0.0.1:43499",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:45046",
+      "raddr": "127.0.0.1:45047",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:46875",
+      "raddr": "127.0.0.1:46876",
+      "status": "TIME_WAIT",
+      "pid": 0
+    },
+    {
+      "laddr": "127.0.0.1:44560",
+      "raddr": "127.0.0.1:44561",
+      "status": "TIME_WAIT",
+      "pid": 0
+    }
+  ]
+}

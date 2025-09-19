@@ -1,0 +1,91 @@
+{
+  "time_local": "2025-09-19T06:35:47",
+  "hostname": "20aeaaa9d3bf",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.41",
+  "mac_address": "d2:95:61:88:d9:d7",
+  "cpu": 5.3,
+  "ramTotal": 8212471808,
+  "ramUsed": 1037967360,
+  "diskTotal": 1081101176832,
+  "diskUsed": 2703097856,
+  "processes": [
+    {
+      "name": "python",
+      "pid": 1
+    }
+  ],
+  "connections": [
+    {
+      "laddr": "172.20.0.4:52024",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:46586",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:46602",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "127.0.0.11:58864",
+      "raddr": null,
+      "status": "NONE",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:52540",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:52536",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:49094",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:40948",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:40940",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:45182",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "127.0.0.11:41731",
+      "raddr": null,
+      "status": "LISTEN",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:52020",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    }
+  ]
+}

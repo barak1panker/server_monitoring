@@ -1,0 +1,97 @@
+{
+  "time_local": "2025-09-18T18:29:51",
+  "hostname": "6fc1b55f149d",
+  "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.41",
+  "mac_address": "6a:a2:47:be:f3:99",
+  "cpu": 0.2,
+  "ramTotal": 8212471808,
+  "ramUsed": 990871552,
+  "diskTotal": 1081101176832,
+  "diskUsed": 2700554240,
+  "processes": [
+    {
+      "name": "python",
+      "pid": 1
+    }
+  ],
+  "connections": [
+    {
+      "laddr": "172.20.0.4:56714",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:52372",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:44294",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:44308",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:35678",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:41076",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "127.0.0.11:35565",
+      "raddr": null,
+      "status": "LISTEN",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:52384",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:34380",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:40936",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:34374",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    },
+    {
+      "laddr": "127.0.0.11:58028",
+      "raddr": null,
+      "status": "NONE",
+      "pid": null
+    },
+    {
+      "laddr": "172.20.0.4:40944",
+      "raddr": "172.20.0.3:8000",
+      "status": "TIME_WAIT",
+      "pid": null
+    }
+  ]
+}

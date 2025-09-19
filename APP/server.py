@@ -11,18 +11,17 @@ Other endpoints unchanged:
 - POST /collect-metrics  -> updates in-memory cache (for /api/metrics), creates RESOURCE alerts on thresholds
 - POST /collect-hashes   -> bulk insert file_hashes + compare to IOC table; creates HASH alerts on matches
 - GET  /api/metrics      -> UI data
-- GET  /api/alerts       -> latest alerts
+- GET  /api/alerts       -> latest alerts (for dashboard)
 - GET  /api/logs         -> latest log rows from your 'logs' table
 - POST /collect-data     -> compatibility alias to /collect-metrics
 - GET  /health           -> health check
 """
-
 from __future__ import annotations
 from fastapi import FastAPI, HTTPException, Request, Query
 from fastapi.responses import JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from typing import Optional, List, Tuple
 from pathlib import Path
 from collections import deque
@@ -34,10 +33,10 @@ from sqlalchemy import (
     Float, select, desc, insert, UniqueConstraint, func
 )
 from sqlalchemy.exc import SQLAlchemyError
-from sqlalchemy import bindparam  # expanding IN
+from sqlalchemy import bindparam
 
 # -------------------- FastAPI & static --------------------
-app = FastAPI(title="Server Monitoring API", version="7.1.0")
+app = FastAPI(title="Server Monitoring API", version="7.1.1")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -61,19 +60,31 @@ DATABASE_URL = os.environ.get("DATABASE_URL", "sqlite:///logs.db")
 engine = create_engine(DATABASE_URL, future=True)
 metadata = MetaData()
 
-IOC_SCHEMA = os.environ.get("IOC_SCHEMA") or None
-IOC_TABLE_NAME = os.environ.get("IOC_TABLE_NAME") or None
-IOC_COL_SHA = os.environ.get("IOC_COL_SHA") or "sha256"
+IOC_SCHEMA = os.environ.get("IOC_SCHEMA", "public")
+IOC_TABLE_NAME = os.environ.get("IOC_TABLE_NAME", "suspicious_hashes")
+IOC_COL_SHA = os.environ.get("IOC_COL_SHA", "sha256")
+IOC_FILE = os.environ.get("IOC_FILE", "/app/static/ioc_hashes.txt")
+suspicious_hashes_set = set()
 
-# Alerts table (internal)
+def load_ioc_hashes():
+    global suspicious_hashes_set
+    if os.path.exists(IOC_FILE):
+        with open(IOC_FILE, "r") as f:
+            suspicious_hashes_set = {line.strip().lower() for line in f if line.strip()}
+        print(f"[INFO] Loaded {len(suspicious_hashes_set)} suspicious hashes from {IOC_FILE}")
+    else:
+        print(f"[WARNING] IOC file {IOC_FILE} not found")
+
+load_ioc_hashes()
+
 alerts = Table(
     "alerts", metadata,
     Column("id", Integer, primary_key=True, autoincrement=True),
     Column("ts", DateTime(timezone=True), nullable=False),
     Column("hostname", String(255), nullable=False),
-    Column("category", String(32), nullable=False),       # RESOURCE / HASH
-    Column("severity", String(32), nullable=False),       # CRITICAL / WARNING / INFO
-    Column("label", String(64), nullable=False),          # "Critical issue"
+    Column("category", String(32), nullable=False),
+    Column("severity", String(32), nullable=False),
+    Column("label", String(64), nullable=False),
     Column("description", String(1024), nullable=False),
     Column("file_path", String(1024), nullable=True),
     Column("sha256", String(64), nullable=True),
@@ -81,7 +92,6 @@ alerts = Table(
     Column("ram_ratio", Float, nullable=True),
 )
 
-# File hashes table (internal)
 file_hashes = Table(
     "file_hashes", metadata,
     Column("id", Integer, primary_key=True, autoincrement=True),
@@ -94,24 +104,20 @@ file_hashes = Table(
     Column("error", String(512), nullable=True),
 )
 
-# -------------------- YOUR LOGS TABLE (matches screenshot) --------------------
-# If your table name is different, set LOGS_TABLE_NAME in .env, default 'logs'
 LOGS_TABLE_NAME = os.environ.get("LOGS_TABLE_NAME", "logs")
-# created_at is "timestamp without time zone" in your DB -> timezone=False
 logs = Table(
     LOGS_TABLE_NAME, metadata,
     Column("id", Integer, primary_key=True, autoincrement=True),
     Column("device_id", Integer, nullable=True),
     Column("device_name", String(255), nullable=True),
     Column("log_path", String(1024), nullable=False),
-    Column("severity", String(255), nullable=True),  # use "METRICS"/"HASH"
+    Column("severity", String(255), nullable=True),
     Column("created_at", DateTime(timezone=False), nullable=False),
 )
 
-# IOC table (reflect external if provided; otherwise create internal empty table)
-if IOC_TABLE_NAME:
+if IOC_TABLE_NAME and IOC_TABLE_NAME != "suspicious_hashes":
     suspicious_hashes = Table(IOC_TABLE_NAME, metadata, schema=IOC_SCHEMA, autoload_with=engine)
-    metadata.create_all(engine, tables=[alerts, file_hashes])  # do not create external table
+    metadata.create_all(engine, tables=[alerts, file_hashes])
 else:
     suspicious_hashes = Table(
         "suspicious_hashes", metadata,
@@ -123,16 +129,14 @@ else:
     )
     metadata.create_all(engine)
 
-CPU_HIGH = float(os.environ.get("CPU_HIGH", "90"))
-RAM_RATIO_HIGH = float(os.environ.get("RAM_RATIO_HIGH", "0.9"))
+CPU_HIGH = float(os.environ.get("CPU_HIGH", "80"))
+RAM_RATIO_HIGH = float(os.environ.get("RAM_RATIO_HIGH", "0.8"))
 
 # -------------------- helpers --------------------
 def _utcnow_tz() -> datetime:
-    """aware UTC (for internal tables)"""
     return datetime.now(timezone.utc)
 
 def _utcnow_naive() -> datetime:
-    """naive UTC (for your logs.created_at which is 'timestamp without time zone')"""
     return datetime.utcnow()
 
 def _parse_iso_to_aware(v: Optional[str]) -> Optional[datetime]:
@@ -163,6 +167,19 @@ def _insert_alert(*, hostname: str, category: str, description: str,
                   cpu: Optional[float] = None, ram_ratio: Optional[float] = None) -> None:
     try:
         with engine.begin() as conn:
+            if category == "HASH" and sha256:
+                ts_24h_ago = _utcnow_tz() - timedelta(hours=24)
+                dup_stmt = select(alerts.c.id).where(
+                    (alerts.c.hostname == hostname) &
+                    (alerts.c.sha256 == sha256) &
+                    (alerts.c.category == "HASH") &
+                    (alerts.c.ts >= ts_24h_ago)
+                ).limit(1)
+                dup = conn.execute(dup_stmt).first()
+                if dup:
+                    print(f"[Alert skipped] Duplicate hash alert for {sha256} on {hostname}")
+                    return
+
             conn.execute(insert(alerts).values(
                 ts=_utcnow_tz(), hostname=hostname, category=category, severity=severity,
                 label=label, description=description[:1024],
@@ -173,10 +190,10 @@ def _insert_alert(*, hostname: str, category: str, description: str,
     except SQLAlchemyError as e:
         print(f"[DB] insert alert failed: {e}")
 
-# -------------------- in-memory metrics cache for /api/metrics --------------------
+# -------------------- in-memory metrics cache --------------------
 METRICS_HISTORY_LEN = 20
 STALE_SECS = int(os.environ.get("METRICS_STALE_SECS", "30"))
-_metrics_cache = {}   # hostname -> {ts, fields...}
+_metrics_cache = {}
 _history_up   = deque(maxlen=METRICS_HISTORY_LEN)
 _history_down = deque(maxlen=METRICS_HISTORY_LEN)
 _history_cpu  = deque(maxlen=METRICS_HISTORY_LEN)
@@ -185,13 +202,11 @@ _history_ram  = deque(maxlen=METRICS_HISTORY_LEN)
 # -------------------- endpoints --------------------
 @app.post("/collect-metrics")
 async def collect_metrics(request: Request) -> JSONResponse:
-    # Parse JSON
     try:
         data = await request.json()
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid JSON")
 
-    # Save JSON to disk and insert to YOUR logs table
     file_path, ts_aware = _save_json_to_disk(data)
     hostname = str(data.get("hostname") or "unknown")
     try:
@@ -201,12 +216,11 @@ async def collect_metrics(request: Request) -> JSONResponse:
                 device_name=hostname,
                 log_path=file_path,
                 severity="METRICS",
-                created_at=_utcnow_naive(),   # naive UTC for 'timestamp without time zone'
+                created_at=_utcnow_naive(),
             ))
     except SQLAlchemyError as e:
         print("[DB] insert logs failed:", e)
 
-    # Extract / compute for cache + alerts
     rt = float(data.get("ramTotal") or 0.0)
     ru = float(data.get("ramUsed") or 0.0)
     ram_ratio = (ru / rt) if rt > 0 else 0.0
@@ -218,7 +232,6 @@ async def collect_metrics(request: Request) -> JSONResponse:
     except Exception:
         dt = du = 0.0
 
-    # Update in-memory cache (for UI)
     _metrics_cache[hostname] = {
         "ts": ts_aware,
         "name": hostname,
@@ -233,7 +246,6 @@ async def collect_metrics(request: Request) -> JSONResponse:
         "netOut": int(data.get("netOut") or 0),
     }
 
-    # Threshold-based alert
     if cpu >= CPU_HIGH or ram_ratio >= RAM_RATIO_HIGH:
         reasons = []
         if cpu >= CPU_HIGH: reasons.append(f"CPU {cpu:.1f}% >= {CPU_HIGH:.1f}%")
@@ -249,14 +261,12 @@ async def collect_metrics(request: Request) -> JSONResponse:
         "ok": True, "saved_file": file_path, "resource_alerted": cpu >= CPU_HIGH or ram_ratio >= RAM_RATIO_HIGH
     })
 
-# Backward compatibility
 @app.post("/collect-data")
 async def collect_data_compat(request: Request):
     return await collect_metrics(request)
 
 @app.post("/collect-hashes")
 async def collect_hashes(request: Request) -> JSONResponse:
-    # Parse
     try:
         payload = await request.json()
         hostname = (payload.get("hostname") or "").strip()
@@ -266,7 +276,6 @@ async def collect_hashes(request: Request) -> JSONResponse:
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid JSON structure")
 
-    # Save JSON + insert logs row (severity=HASH)
     json_path, ts_aware = _save_json_to_disk(payload)
     try:
         with engine.begin() as conn:
@@ -280,7 +289,6 @@ async def collect_hashes(request: Request) -> JSONResponse:
     except SQLAlchemyError as e:
         print("[DB] insert logs failed:", e)
 
-    # Truncate batch
     MAX_ROWS = 20000
     hashes = hashes[:MAX_ROWS]
     ts_now = _utcnow_tz()
@@ -303,41 +311,26 @@ async def collect_hashes(request: Request) -> JSONResponse:
         if sha and isinstance(sha, str) and len(sha) == 64:
             sha_set.add(sha.lower())
 
-    # Insert file_hashes
-    try:
-        if rows:
-            with engine.begin() as conn:
-                conn.execute(insert(file_hashes), rows)
-    except SQLAlchemyError as e:
-        raise HTTPException(status_code=500, detail=f"DB insert error: {e}")
+    print(f"Received sha_set: {sha_set}")  # הוספתי לוגינג זמני
+    bad_hashes = sha_set.intersection(suspicious_hashes_set)
+    print(f"Matched bad_hashes: {bad_hashes}")  # הוספתי לוגינג זמני
 
-    # IOC lookup
+    if rows:
+        with engine.begin() as conn:
+            conn.execute(insert(file_hashes), rows)
+
     inserted_alerts = 0
-    if sha_set and IOC_TABLE_NAME:
-        try:
-            with engine.connect() as conn:
-                try:
-                    ioc_col = suspicious_hashes.c[IOC_COL_SHA]
-                except KeyError:
-                    raise HTTPException(status_code=500, detail=f"IOC column '{IOC_COL_SHA}' not found on table '{IOC_TABLE_NAME}'")
-                stmt = select(func.lower(ioc_col)).where(
-                    func.lower(ioc_col).in_(bindparam("sha_list", expanding=True))
+    if bad_hashes:
+        for h in rows:
+            sha = (h["sha256"] or "").lower() if h["sha256"] else None
+            if sha in bad_hashes:
+                description = f"Malware detected: malicious hash ({sha}) found in file: {h['file_path']}"
+                _insert_alert(
+                    hostname=hostname, category="HASH",
+                    description=description, severity="CRITICAL", label="Malicious Hash",
+                    file_path=h["file_path"], sha256=sha
                 )
-                bad = {row[0] for row in conn.execute(stmt, {"sha_list": list(sha_set)})}
-        except SQLAlchemyError as e:
-            raise HTTPException(status_code=500, detail=f"DB query error: {e}")
-
-        if bad:
-            for h in rows:
-                sha = (h["sha256"] or "").lower() if h["sha256"] else None
-                if sha and sha in bad:
-                    description = f"Malicious hash detected ({sha}) in file: {h['file_path']}"
-                    _insert_alert(
-                        hostname=hostname, category="HASH",
-                        description=description, severity="CRITICAL", label="Critical issue",
-                        file_path=h["file_path"], sha256=sha
-                    )
-                    inserted_alerts += 1
+                inserted_alerts += 1
 
     return JSONResponse({"ok": True, "inserted_hash_rows": len(rows), "alerts_created": inserted_alerts, "json_saved": json_path})
 
@@ -358,7 +351,6 @@ def get_alerts(limit: int = Query(50, ge=1, le=500)) -> List[dict]:
 
 @app.get("/api/logs")
 def get_logs(limit: int = Query(50, ge=1, le=500)) -> List[dict]:
-    """Returns rows from your 'logs' table (id, device_id, device_name, log_path, severity, created_at)."""
     try:
         with engine.connect() as conn:
             rows = conn.execute(
@@ -371,7 +363,6 @@ def get_logs(limit: int = Query(50, ge=1, le=500)) -> List[dict]:
     except SQLAlchemyError as e:
         raise HTTPException(status_code=500, detail=f"DB error: {e}")
 
-# UI contract: live metrics payload
 @app.get("/api/metrics")
 def api_metrics() -> dict:
     now = datetime.now(timezone.utc)

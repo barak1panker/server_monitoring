@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 # Read config from environment (docker-compose passes these)
 SERVER_URL="${SERVER_URL:-http://app:8000}"
@@ -10,6 +9,12 @@ HASH_INTERVAL="${HASH_INTERVAL:-3600}"
 AGENT_MAX_SIZE_MB="${AGENT_MAX_SIZE_MB:-100}"
 AGENT_MAX_FILES="${AGENT_MAX_FILES:-5000}"
 AGENT_WORKERS="${AGENT_WORKERS:-4}"
+
+# Basic environment variables check
+if [ -z "$SERVER_URL" ]; then
+  echo "Error: SERVER_URL is not set"
+  exit 1
+fi
 
 echo "[agent] server: $SERVER_URL"
 echo "[agent] metrics interval: ${METRICS_INTERVAL}s"
