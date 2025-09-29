@@ -177,7 +177,3 @@ curl -X POST http://localhost:8000/collect-data \
 
 ---
 
-## 👤 Author
-
-Developed by **Barak Panker**
-IT & Systems / Python
