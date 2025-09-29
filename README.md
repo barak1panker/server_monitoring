@@ -170,10 +170,9 @@ curl -X POST http://localhost:8000/collect-data \
 
   <img width="1488" height="422" alt="image" src="https://github.com/user-attachments/assets/3f71a67d-aa5d-4d49-a5bc-9e64f217aa86" />
 
-* **Email notifications:**
-  <img width="1500" height="410" alt="image" src="https://github.com/user-attachments/assets/ad4c522a-01ef-4dcc-a290-57ddabbed365" />
 
 * **logs:**
+
   <img width="873" height="982" alt="image" src="https://github.com/user-attachments/assets/da6b5c0f-2290-4ad1-87d3-373fc0a33270" />
 
 ## 📌 Roadmap
