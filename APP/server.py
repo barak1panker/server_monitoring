@@ -26,15 +26,47 @@ from datetime import datetime, timezone
 from typing import Optional, List, Tuple
 from pathlib import Path
 from collections import deque
-import os, json
+import json
+import os, smtplib
 
-# SQLAlchemy
+
+
+def send_critical_email() -> bool:
+    
+    host = os.getenv("SMTP_HOST", "smtp.gmail.com")
+    port = int(os.getenv("SMTP_PORT", "587"))
+    user = os.getenv("SMTP_USER")
+    pwd  = os.getenv("SMTP_PASS")
+    to   = os.getenv("ALERT_EMAILS", user)
+
+    if not (user and pwd and to):
+        print("[EMAIL] missing SMTP_USER/SMTP_PASS/ALERT_EMAILS")
+        return False
+
+    
+    subject = "Critical System Alert"
+    body = "There is a critical system alert. Please check the ERD."
+
+    
+    msg = f"From: {user}\r\nTo: {to}\r\nSubject: {subject}\r\n\r\n{body}"
+
+    try:
+        with smtplib.SMTP(host, port) as s:
+            s.starttls()
+            s.login(user, pwd)
+            s.sendmail(user, pwd, msg.encode("utf-8"))
+        return True
+    except Exception as e:
+        print(f"[EMAIL] send failed: {e}")
+        return False
+
+
 from sqlalchemy import (
     create_engine, MetaData, Table, Column, Integer, String, DateTime, BigInteger,
     Float, select, desc, insert, UniqueConstraint, func
 )
 from sqlalchemy.exc import SQLAlchemyError
-from sqlalchemy import bindparam  # expanding IN
+from sqlalchemy import bindparam  
 
 # -------------------- FastAPI & static --------------------
 app = FastAPI(title="Server Monitoring API", version="7.1.0")
@@ -187,7 +219,7 @@ _history_ram  = deque(maxlen=METRICS_HISTORY_LEN)
 async def collect_metrics(request: Request) -> JSONResponse:
     # Parse JSON
     try:
-        data = await request.json()
+        data = await request.json()  
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid JSON")
 
@@ -236,6 +268,10 @@ async def collect_metrics(request: Request) -> JSONResponse:
     # Threshold-based alert
     if cpu >= CPU_HIGH or ram_ratio >= RAM_RATIO_HIGH:
         reasons = []
+        try:
+            send_critical_email()
+        except Exception as e:
+            print(f"[ALERT] send_critical_email failed: {e}")
         if cpu >= CPU_HIGH: reasons.append(f"CPU {cpu:.1f}% >= {CPU_HIGH:.1f}%")
         if ram_ratio >= RAM_RATIO_HIGH: reasons.append(f"RAM ratio {ram_ratio:.2f} >= {RAM_RATIO_HIGH:.2f}")
         description = "Resource usage threshold exceeded: " + ", ".join(reasons)
@@ -342,7 +378,7 @@ async def collect_hashes(request: Request) -> JSONResponse:
     return JSONResponse({"ok": True, "inserted_hash_rows": len(rows), "alerts_created": inserted_alerts, "json_saved": json_path})
 
 @app.get("/api/alerts")
-def get_alerts(limit: int = Query(50, ge=1, le=500)) -> List[dict]:
+def get_alerts(limit: int = Query(1000, ge=1, le=500)) -> List[dict]:
     try:
         with engine.connect() as conn:
             rows = conn.execute(
@@ -357,7 +393,7 @@ def get_alerts(limit: int = Query(50, ge=1, le=500)) -> List[dict]:
         raise HTTPException(status_code=500, detail=f"DB error: {e}")
 
 @app.get("/api/logs")
-def get_logs(limit: int = Query(50, ge=1, le=500)) -> List[dict]:
+def get_logs(limit: int = Query(1000, ge=1, le=500)) -> List[dict]:
     """Returns rows from your 'logs' table (id, device_id, device_name, log_path, severity, created_at)."""
     try:
         with engine.connect() as conn:

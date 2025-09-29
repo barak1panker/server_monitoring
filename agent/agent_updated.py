@@ -91,7 +91,9 @@ def _hash_file(fp: str, max_size_bytes: Optional[int]) -> Tuple[str, Optional[st
         with open(fp, "rb", buffering=1024 * 1024) as f:
             for chunk in iter(lambda: f.read(1024 * 1024), b""):
                 h.update(chunk)
-        return (fp, h.hexdigest(), size, None)
+        sha = h.hexdigest()
+        print(f"Computed SHA256 for {fp}: {sha}")  # הוספתי לוגינג כאן
+        return (fp, sha, size, None)
     except Exception as e:
         try:
             size = int(os.path.getsize(fp))
@@ -139,8 +141,10 @@ def send_hashes(server_url: str, hostname: str, hashes: List[dict], timeout: int
     url = server_url.rstrip("/") + "/collect-hashes"
     for i in range(0, len(hashes), chunk_size):
         batch = hashes[i:i + chunk_size]
-        r = requests.post(url, json={"hostname": hostname, "hashes": batch}, timeout=timeout)
-        r.raise_for_status()
+        if batch:  # הוספתי תנאי כדי לוודא שליחה רק אם יש תוכן
+            print(f"Sending batch of {len(batch)} hashes to {url}")  # לוגינג חדש
+            r = requests.post(url, json={"hostname": hostname, "hashes": batch}, timeout=timeout)
+            r.raise_for_status()
 
 # ---------- new: hash once ----------
 def generate_hashes_once(
